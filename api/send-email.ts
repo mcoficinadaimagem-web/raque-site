@@ -18,8 +18,8 @@ export default async function handler(req: any, res: any) {
   try {
     const transporter = nodemailer.createTransport({
       host: process.env.SMTP_HOST,
-      port: Number(process.env.SMTP_PORT),
-      secure: true,
+      port: 587,             // 👈 PORTA CORRETA PARA HOSTGATOR + VERCEL
+      secure: false,         // 👈 STARTTLS (não SSL)
       auth: {
         user: process.env.SMTP_USER,
         pass: process.env.SMTP_PASS,
@@ -42,6 +42,7 @@ export default async function handler(req: any, res: any) {
     });
 
     return res.status(200).json({ success: true });
+
   } catch (err) {
     console.error("Erro ao enviar email:", err);
     return res.status(500).json({ error: "Erro ao enviar email" });
