@@ -1,5 +1,9 @@
 import nodemailer from "nodemailer";
 
+export const config = {
+  runtime: "nodejs18.x",
+};
+
 export default async function handler(req: any, res: any) {
   if (req.method !== "POST") {
     return res.status(405).json({ error: "Método não permitido" });
@@ -32,12 +36,14 @@ export default async function handler(req: any, res: any) {
         <p><strong>E-mail:</strong> ${email}</p>
         <p><strong>Telefone:</strong> ${phone}</p>
         <p><strong>Mensagem:</strong><br/>${message}</p>
+        <br/>
+        <p style="color: #888;">Enviado automaticamente pelo site.</p>
       `,
     });
 
     return res.status(200).json({ success: true });
-  } catch (error) {
-    console.error("Erro ao enviar email:", error);
+  } catch (err) {
+    console.error("Erro ao enviar email:", err);
     return res.status(500).json({ error: "Erro ao enviar email" });
   }
 }
