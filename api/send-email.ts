@@ -1,22 +1,14 @@
 import nodemailer from "nodemailer";
 
-export const config = {
-  runtime: "nodejs18.x",
-};
-
-export default async function handler(req: Request) {
+export default async function handler(req: any, res: any) {
   if (req.method !== "POST") {
-    return new Response(JSON.stringify({ error: "Método não permitido" }), {
-      status: 405,
-    });
+    return res.status(405).json({ error: "Método não permitido" });
   }
 
-  const { name, email, phone, message } = await req.json();
+  const { name, email, phone, message } = req.body;
 
   if (!name || !email || !phone || !message) {
-    return new Response(JSON.stringify({ error: "Campos obrigatórios faltando" }), {
-      status: 400,
-    });
+    return res.status(400).json({ error: "Campos obrigatórios faltando" });
   }
 
   try {
@@ -40,19 +32,12 @@ export default async function handler(req: Request) {
         <p><strong>E-mail:</strong> ${email}</p>
         <p><strong>Telefone:</strong> ${phone}</p>
         <p><strong>Mensagem:</strong><br/>${message}</p>
-        <br/>
-        <p style="color: #888;">Enviado automaticamente pelo site.</p>
       `,
     });
 
-    return new Response(JSON.stringify({ success: true }), {
-      status: 200,
-    });
-
-  } catch (err) {
-    console.error("Erro ao enviar email:", err);
-    return new Response(JSON.stringify({ error: "Erro ao enviar email" }), {
-      status: 500,
-    });
+    return res.status(200).json({ success: true });
+  } catch (error) {
+    console.error("Erro ao enviar email:", error);
+    return res.status(500).json({ error: "Erro ao enviar email" });
   }
 }
