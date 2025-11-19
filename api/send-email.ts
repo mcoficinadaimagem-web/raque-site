@@ -1,18 +1,22 @@
 import nodemailer from "nodemailer";
 
 export const config = {
-  runtime: "edge", // Usa Edge Functions (recomendado para Vite)
+  runtime: "nodejs18.x",
 };
 
 export default async function handler(req: Request) {
   if (req.method !== "POST") {
-    return new Response(JSON.stringify({ error: "Método não permitido" }), { status: 405 });
+    return new Response(JSON.stringify({ error: "Método não permitido" }), {
+      status: 405,
+    });
   }
 
   const { name, email, phone, message } = await req.json();
 
   if (!name || !email || !phone || !message) {
-    return new Response(JSON.stringify({ error: "Campos obrigatórios faltando" }), { status: 400 });
+    return new Response(JSON.stringify({ error: "Campos obrigatórios faltando" }), {
+      status: 400,
+    });
   }
 
   try {
@@ -41,9 +45,14 @@ export default async function handler(req: Request) {
       `,
     });
 
-    return new Response(JSON.stringify({ success: true }), { status: 200 });
+    return new Response(JSON.stringify({ success: true }), {
+      status: 200,
+    });
+
   } catch (err) {
     console.error("Erro ao enviar email:", err);
-    return new Response(JSON.stringify({ error: "Erro ao enviar email" }), { status: 500 });
+    return new Response(JSON.stringify({ error: "Erro ao enviar email" }), {
+      status: 500,
+    });
   }
 }
