@@ -1,31 +1,34 @@
-import type { VercelRequest, VercelResponse } from "@vercel/node";
 import nodemailer from "nodemailer";
 
-export default async function handler(req: VercelRequest, res: VercelResponse) {
+export const config = {
+  runtime: "edge", // Usa Edge Functions (recomendado para Vite)
+};
+
+export default async function handler(req: Request) {
   if (req.method !== "POST") {
-    return res.status(405).json({ error: "Método não permitido" });
+    return new Response(JSON.stringify({ error: "Método não permitido" }), { status: 405 });
   }
 
-  const { name, email, phone, message } = req.body;
+  const { name, email, phone, message } = await req.json();
 
   if (!name || !email || !phone || !message) {
-    return res.status(400).json({ error: "Campos obrigatórios faltando" });
+    return new Response(JSON.stringify({ error: "Campos obrigatórios faltando" }), { status: 400 });
   }
 
   try {
     const transporter = nodemailer.createTransport({
-      host: process.env.SMTP_HOST, // mail.raquelmartinsorganiza.com.br
-      port: Number(process.env.SMTP_PORT), // 465
-      secure: true, // SSL
+      host: process.env.SMTP_HOST,
+      port: Number(process.env.SMTP_PORT),
+      secure: true,
       auth: {
-        user: process.env.SMTP_USER, // contato@...
-        pass: process.env.SMTP_PASS, // senha do email
+        user: process.env.SMTP_USER,
+        pass: process.env.SMTP_PASS,
       },
     });
 
     await transporter.sendMail({
       from: `"Site Raquel Martins" <${process.env.SMTP_USER}>`,
-      to: process.env.SMTP_USER, // envia para o próprio email da Raquel
+      to: process.env.SMTP_USER,
       subject: `Novo contato de ${name}`,
       html: `
         <h2>📩 Novo contato pelo site</h2>
@@ -38,9 +41,9 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
       `,
     });
 
-    return res.status(200).json({ success: true });
+    return new Response(JSON.stringify({ success: true }), { status: 200 });
   } catch (err) {
     console.error("Erro ao enviar email:", err);
-    return res.status(500).json({ error: "Erro ao enviar email" });
+    return new Response(JSON.stringify({ error: "Erro ao enviar email" }), { status: 500 });
   }
 }
