@@ -11,27 +11,27 @@ export default async function handler(req, res) {
     return res.status(405).json({ error: "Método não permitido" });
   }
 
-  const { name, email, phone, message } = req.body;
-
-  if (!name || !email || !phone || !message) {
-    return res.status(400).json({ error: "Campos obrigatórios faltando" });
-  }
-
   try {
-    await resend.emails.send({
-      from: "Contato | Raquel Martins <noreply@raquelmartinsorganiza.com.br>",
+    const { name, email, phone, message } = req.body;
+
+    if (!name || !email || !phone || !message) {
+      return res.status(400).json({ error: "Campos obrigatórios faltando" });
+    }
+
+    const result = await resend.emails.send({
+      from: "Raquel Martins <noreply@raquelmartinsorganiza.com.br>",
       to: "contato@raquelmartinsorganiza.com.br",
       subject: `Novo contato de ${name}`,
       html: `
-        <h2>📩 Novo contato pelo site</h2>
+        <h2>Novo contato via site</h2>
         <p><strong>Nome:</strong> ${name}</p>
-        <p><strong>E-mail:</strong> ${email}</p>
+        <p><strong>Email:</strong> ${email}</p>
         <p><strong>Telefone:</strong> ${phone}</p>
         <p><strong>Mensagem:</strong><br/>${message}</p>
-        <br/>
-        <p style="color: #888;">Enviado automaticamente pelo site.</p>
       `,
     });
+
+    console.log("Resend result:", result);
 
     return res.status(200).json({ success: true });
   } catch (error) {
