@@ -6,7 +6,7 @@ export const config = {
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 
-export default async function handler(req: any, res: any) {
+export default async function handler(req, res) {
   if (req.method !== "POST") {
     return res.status(405).json({ error: "Método não permitido" });
   }
@@ -18,9 +18,9 @@ export default async function handler(req: any, res: any) {
   }
 
   try {
-    const response = await resend.emails.send({
-      from: "Site Raquel Martins <contato@raquelmartinsorganiza.com.br>",
-      to: ["mcoficinadaimagem@gmail.com"],
+    await resend.emails.send({
+      from: "Contato | Raquel Martins <noreply@raquelmartinsorganiza.com.br>",
+      to: "contato@raquelmartinsorganiza.com.br",
       subject: `Novo contato de ${name}`,
       html: `
         <h2>📩 Novo contato pelo site</h2>
@@ -33,10 +33,9 @@ export default async function handler(req: any, res: any) {
       `,
     });
 
-    return res.status(200).json({ success: true, response });
-
-  } catch (err: any) {
-    console.error("Erro ao enviar email:", err);
-    return res.status(500).json({ error: err.message || "Erro ao enviar email" });
+    return res.status(200).json({ success: true });
+  } catch (error) {
+    console.log("Erro ao enviar:", error);
+    return res.status(500).json({ error: "Erro ao enviar email" });
   }
 }
