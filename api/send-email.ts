@@ -1,8 +1,10 @@
-import nodemailer from "nodemailer";
+import { Resend } from "resend";
 
 export const config = {
   runtime: "nodejs18.x",
 };
+
+const resend = new Resend(process.env.RESEND_API_KEY);
 
 export default async function handler(req: any, res: any) {
   if (req.method !== "POST") {
@@ -16,19 +18,9 @@ export default async function handler(req: any, res: any) {
   }
 
   try {
-    const transporter = nodemailer.createTransport({
-      host: process.env.SMTP_HOST,
-      port: 587,             // 👈 PORTA CORRETA PARA HOSTGATOR + VERCEL
-      secure: false,         // 👈 STARTTLS (não SSL)
-      auth: {
-        user: process.env.SMTP_USER,
-        pass: process.env.SMTP_PASS,
-      },
-    });
-
-    await transporter.sendMail({
-      from: `"Site Raquel Martins" <${process.env.SMTP_USER}>`,
-      to: process.env.SMTP_USER,
+    const response = await resend.emails.send({
+      from: "Site Raquel Martins <contato@raquelmartinsorganiza.com.br>",
+      to: ["mcoficinadaimagem@gmail.com"],
       subject: `Novo contato de ${name}`,
       html: `
         <h2>📩 Novo contato pelo site</h2>
@@ -41,10 +33,10 @@ export default async function handler(req: any, res: any) {
       `,
     });
 
-    return res.status(200).json({ success: true });
+    return res.status(200).json({ success: true, response });
 
-  } catch (err) {
+  } catch (err: any) {
     console.error("Erro ao enviar email:", err);
-    return res.status(500).json({ error: "Erro ao enviar email" });
+    return res.status(500).json({ error: err.message || "Erro ao enviar email" });
   }
 }
