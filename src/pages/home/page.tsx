@@ -121,6 +121,17 @@ export default function Home() {
   pensado especialmente para você.
 </p>
 
+<p className="text-xl text-[#37332F] mb-8">
+  Organize sua casa e transforme sua rotina com um sistema de organização
+  pensado especialmente para você.
+</p>
+
+
+<p className="text-xl text-[#37332F] mb-8">
+  Organize sua casa e transforme sua rotina com um sistema de organização
+  pensado especialmente para você.
+</p>
+
 
               <div className="flex flex-col sm:flex-row gap-4">
                 <a
