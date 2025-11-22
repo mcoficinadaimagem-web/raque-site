@@ -1,0 +1,7 @@
+{
+  "rewrites": [
+    { "source": "/personal-organizer", "destination": "/" },
+    { "source": "/personal-organizer/**", "destination": "/" },
+    { "source": "/(.*)", "destination": "/" }
+  ]
+}
