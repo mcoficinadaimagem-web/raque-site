@@ -32,6 +32,12 @@
     />
     <meta property="og:type" content="website" />
 
+    <!-- Google Site Verification (corrigido para dentro do HEAD) -->
+    <meta
+      name="google-site-verification"
+      content="se3HMp230YG7meiYazBmpB_Jfz6Yy1uaGjmbk2Tf5kM"
+    />
+
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -49,8 +55,8 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
     />
-    
-    <!-- Google Tag Manager -->
+
+    <!-- Google Tag Manager (CORRETAMENTE POSICIONADO NO HEAD) -->
     <script>
       (function (w, d, s, l, i) {
         w[l] = w[l] || [];
@@ -66,10 +72,9 @@
         f.parentNode.insertBefore(j, f);
       })(window, document, "script", "dataLayer", "GTM-NM4DV5MZ");
     </script>
+    <!-- Fim GTM -->
 
-    <!-- End Google Tag Manager -->
-
-    <!-- Google tag (gtag.js) -->
+    <!-- Google Ads / Global Site Tag (CORRETAMENTE POSICIONADO) -->
     <script
       async
       src="https://www.googletagmanager.com/gtag/js?id=AW-16895346337"
@@ -80,26 +85,25 @@
         dataLayer.push(arguments);
       }
       gtag("js", new Date());
-
       gtag("config", "AW-16895346337");
     </script>
   </head>
-  <meta name="google-site-verification" content="se3HMp230YG7meiYazBmpB_Jfz6Yy1uaGjmbk2Tf5kM" />
+
   <body>
-    <!-- Google Tag Manager (noscript) -->
-    <noscript
-      ><iframe
+    <!-- Google Tag Manager (noscript) — obrigatório logo no início do BODY -->
+    <noscript>
+      <iframe
         src="https://www.googletagmanager.com/ns.html?id=GTM-NM4DV5MZ"
         height="0"
         width="0"
         style="display: none; visibility: hidden"
-      ></iframe
-    ></noscript>
+      ></iframe>
+    </noscript>
     <!-- End Google Tag Manager (noscript) -->
-    
+
     <div id="root"></div>
 
-    <!-- Script principal do React -->
+    <!-- React -->
     <script type="module" src="./src/main.tsx"></script>
 
     <!-- Readdy Agent Widget -->
