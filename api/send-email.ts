@@ -19,8 +19,9 @@ export default async function handler(req, res) {
     }
 
     const result = await resend.emails.send({
-      from: "Raquel Martins <noreply@raquelmartinsorganiza.com.br>",
+      from: "Raquel Martins <site@mail.raquelmartinsorganiza.com.br>",
       to: "contato@raquelmartinsorganiza.com.br",
+      reply_to: email,
       subject: `Novo contato de ${name}`,
       html: `
         <h2>Novo contato via site</h2>
