@@ -109,12 +109,18 @@ export default function Home() {
                 style={{ fontFamily: "Playfair Display, serif" }}
               >
                 Organize sua casa, transforme sua vida
-              </h1>
+              <h1
+  className="text-4xl lg:text-6xl font-bold text-[#37332F] mb-6"
+  style={{ fontFamily: "Playfair Display, serif" }}
+>
+  Personal Organizer Profissional em São Paulo
+</h1>
 
-              <p className="text-xl text-[#37332F] mb-8">
-                Serviços de organizadora pessoal para mais praticidade e
-                conforto no seu dia a dia
-              </p>
+<p className="text-xl text-[#37332F] mb-8">
+  Organize sua casa e transforme sua rotina com um sistema de organização
+  pensado especialmente para você.
+</p>
+
 
               <div className="flex flex-col sm:flex-row gap-4">
                 <a
