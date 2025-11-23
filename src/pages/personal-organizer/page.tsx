@@ -561,7 +561,7 @@ export default function PersonalOrganizerLanding() {
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             <div className="bg-[#FDF7F2] rounded-lg shadow-lg overflow-hidden">
               <img
-                src="closet antes.jpg"
+                src="closet-antes.jpg"
                 alt="Closet antes da organização"
                 className="w-full h-64 object-cover"
               />
@@ -569,7 +569,7 @@ export default function PersonalOrganizerLanding() {
 
             <div className="bg-[#FDF7F2] rounded-lg shadow-lg overflow-hidden">
               <img
-                src="despensa antes.jpg"
+                src="despensa-antes.jpg"
                 alt="Despensa antes da organização"
                 className="w-full h-64 object-cover"
               />
@@ -577,7 +577,7 @@ export default function PersonalOrganizerLanding() {
 
             <div className="bg-[#FDF7F2] rounded-lg shadow-lg overflow-hidden">
               <img
-                src="escritorio antes.jpg"
+                src="escritorio-antes.jpg"
                 alt="Escritório antes da organização"
                 className="w-full h-64 object-cover"
               />
