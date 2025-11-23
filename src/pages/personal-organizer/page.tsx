@@ -271,7 +271,7 @@ export default function PersonalOrganizerLanding() {
             {/* Armários */}
             <div className="bg-white rounded-lg overflow-hidden shadow-lg">
               <img
-                src="armario personal organizer.jpg"
+                src="armario-personal-organizer.jpg"
                 alt="Organização de armários e closets"
                 className="w-full h-64 object-cover"
               />
@@ -294,7 +294,7 @@ export default function PersonalOrganizerLanding() {
             {/* Cozinhas */}
             <div className="bg-white rounded-lg overflow-hidden shadow-lg">
               <img
-                src="cozinha personal organizer.jpg"
+                src="cozinha-personal-organizer.jpg"
                 alt="Organização de cozinhas e despensas"
                 className="w-full h-64 object-cover"
               />
@@ -317,7 +317,7 @@ export default function PersonalOrganizerLanding() {
             {/* Escritórios */}
             <div className="bg-white rounded-lg overflow-hidden shadow-lg">
               <img
-                src="escritório personal organizer.jpg"
+                src="escritório-personal-organizer.jpg"
                 alt="Organização de escritórios e home offices"
                 className="w-full h-64 object-cover"
               />
