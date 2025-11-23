@@ -1,5 +1,6 @@
 "use client";
-import { useState } from "react";
+
+import { useState, type FormEvent } from "react";
 
 export default function PersonalOrganizerLanding() {
   const [openFaq, setOpenFaq] = useState<number | null>(null);
@@ -10,10 +11,15 @@ export default function PersonalOrganizerLanding() {
     message: "",
   });
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
-    if (!formData.name || !formData.email || !formData.phone || !formData.message) {
+    if (
+      !formData.name ||
+      !formData.email ||
+      !formData.phone ||
+      !formData.message
+    ) {
       alert("Por favor, preencha todos os campos");
       return;
     }
@@ -90,7 +96,7 @@ export default function PersonalOrganizerLanding() {
         <div className="absolute inset-0">
           <img
             src="/raquel-martins.jpeg"
-            alt="Ambiente organizado residencial em São Paulo"
+            alt="Ambiente organizado"
             className="w-full h-full object-cover object-top opacity-20"
           />
           <div className="absolute inset-0 bg-[#FDF7F2]/80" />
@@ -100,92 +106,44 @@ export default function PersonalOrganizerLanding() {
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             {/* TEXTO PRINCIPAL */}
             <div>
-              <h2
-                className="text-sm font-semibold tracking-[0.2em] uppercase text-[#7D7C60] mb-3"
-              >
-                Personal Organizer SP • Organização Residencial
-              </h2>
-
               <h1
-                className="text-4xl lg:text-6xl font-bold text-[#37332F] mb-5"
+                className="text-4xl lg:text-6xl font-bold text-[#37332F] mb-6"
                 style={{ fontFamily: "Playfair Display, serif" }}
               >
-                Personal Organizer em São Paulo – Organização Residencial
-                Profissional
+                Personal Organizer Profissional em São Paulo
               </h1>
 
-              <p className="text-xl text-[#37332F] mb-4">
+              <p className="text-xl text-[#37332F] mb-8">
                 Organize sua casa e transforme sua rotina com um sistema de
-                organização pensado especialmente para o seu dia a dia,
-                estilo de vida e necessidades da sua família.
-              </p>
-
-              <p className="text-base text-[#37332F] mb-8">
-                Se você buscou por{" "}
-                <strong>personal organizer em São Paulo</strong>,{" "}
-                <strong>organização de casa</strong> ou{" "}
-                <strong>organização residencial SP</strong>, aqui você encontra
-                um atendimento profissional, humanizado e com resultados
-                duradouros – sem fórmulas prontas.
+                organização pensado especialmente para você.
               </p>
 
               <div className="flex flex-col sm:flex-row gap-4">
                 <a
                   href="#servicos"
-                  className="bg-[#37332F] text-white px-8 py-4 rounded-lg hover:bg-[#2a251f] transition-colors text-center"
+                  className="bg-[#37332F] text-white px-8 py-4 rounded-lg hover:bg-[#2a251f] transition-colors"
                 >
-                  Ver serviços de organização
+                  Ver Serviços
                 </a>
 
                 <a
-                  href="#contato"
-                  className="border-2 border-[#37332F] text-[#37332F] px-8 py-4 rounded-lg hover:bg-[#37332F] hover:text-white transition-colors text-center"
+                  href="#sobre"
+                  className="border-2 border-[#37332F] text-[#37332F] px-8 py-4 rounded-lg hover:bg-[#37332F] hover:text-white transition-colors"
                 >
-                  Solicitar avaliação gratuita
+                  Saiba Mais
                 </a>
               </div>
-
-              <p className="mt-4 text-sm text-[#7D7C60]">
-                Atendimento em toda São Paulo e região. Projetos sob medida
-                para closets, quartos, cozinhas, despensas, escritórios,
-                home offices e casas completas.
-              </p>
             </div>
 
             {/* FOTO */}
             <div className="lg:text-right">
               <img
                 src="/raquel-martins.jpeg"
-                alt="Raquel Martins - Personal Organizer em São Paulo"
+                alt="Raquel Martins - Organizadora Pessoal"
                 className="w-full max-w-sm mx-auto lg:ml-auto rounded-lg shadow-lg"
               />
             </div>
           </div>
-        </div>
-      </section>
-
-      {/* BLOCO SEO - SERVIÇO */}
-      <section className="py-12 bg-white">
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2
-            className="text-3xl font-bold text-[#37332F] mb-4"
-            style={{ fontFamily: "Playfair Display, serif" }}
-          >
-            Serviço de Personal Organizer em São Paulo
-          </h2>
-          <p className="text-lg text-[#37332F] mb-3 leading-relaxed">
-            A organização profissional vai muito além de “arrumar a casa”.
-            Como <strong>Personal Organizer em São Paulo</strong>, eu crio
-            sistemas inteligentes para que cada coisa tenha o seu lugar
-            e seja fácil de manter no dia a dia. O objetivo é trazer{" "}
-            <strong>praticidade, conforto e bem-estar</strong> para sua rotina.
-          </p>
-          <p className="text-lg text-[#37332F] leading-relaxed">
-            Trabalhamos com organização de{" "}
-            <strong>closets, armários, cozinhas, despensas, áreas de serviço,
-            home offices e ambientes completos</strong>, sempre respeitando seu
-            estilo de vida, o espaço disponível e o orçamento.
-          </p>
         </div>
       </section>
 
@@ -197,11 +155,11 @@ export default function PersonalOrganizerLanding() {
               className="text-4xl font-bold text-[#37332F] mb-4"
               style={{ fontFamily: "Playfair Display, serif" }}
             >
-              Benefícios da Organização Residencial
+              Benefícios da Organização
             </h2>
             <p className="text-lg text-[#7D7C60] max-w-2xl mx-auto">
-              Organização profissional que gera mais tempo, funcionalidade e
-              leveza para sua rotina em São Paulo.
+              Descubra como a organização pode transformar sua rotina e
+              bem-estar
             </p>
           </div>
 
@@ -214,9 +172,8 @@ export default function PersonalOrganizerLanding() {
                 Economia de Tempo
               </h3>
               <p className="text-[#37332F]">
-                Chega de perder minutos preciosos procurando roupas, documentos
-                ou utensílios. Com um sistema funcional, você encontra tudo em
-                poucos segundos.
+                Encontre tudo rapidamente com sistemas eficientes que poupam
+                horas do seu dia.
               </p>
             </div>
 
@@ -225,12 +182,10 @@ export default function PersonalOrganizerLanding() {
                 <i className="ri-settings-3-line text-2xl text-white" />
               </div>
               <h3 className="text-2xl font-bold text-[#37332F] mb-4">
-                Ambientes Mais Funcionais
+                Mais Funcionalidade
               </h3>
               <p className="text-[#37332F]">
-                Cada ambiente é pensado para ser prático, bonito e
-                funcional, facilitando sua rotina e o uso diário de cada
-                espaço da casa.
+                Otimize cada espaço da sua casa com soluções inteligentes.
               </p>
             </div>
 
@@ -239,12 +194,10 @@ export default function PersonalOrganizerLanding() {
                 <i className="ri-heart-3-line text-2xl text-white" />
               </div>
               <h3 className="text-2xl font-bold text-[#37332F] mb-4">
-                Menos Estresse, Mais Leveza
+                Redução do Estresse
               </h3>
               <p className="text-[#37332F]">
-                Uma casa organizada transmite calma, aconchego e sensação de
-                cuidado. Isso impacta diretamente o bem-estar de toda a
-                família.
+                Viva com mais tranquilidade em um ambiente harmonioso.
               </p>
             </div>
           </div>
@@ -259,79 +212,64 @@ export default function PersonalOrganizerLanding() {
               className="text-4xl font-bold text-[#37332F] mb-4"
               style={{ fontFamily: "Playfair Display, serif" }}
             >
-              Serviços de Personal Organizer
+              Nossos Serviços
             </h2>
             <p className="text-lg text-[#7D7C60] max-w-2xl mx-auto">
-              Soluções de organização residencial em São Paulo, pensadas para
-              cada ambiente e para a rotina da sua família.
+              Soluções personalizadas para cada ambiente da sua casa
             </p>
           </div>
 
           <div className="grid md:grid-cols-3 gap-8">
-            {/* Armários */}
+            {/* Serviço 1 */}
             <div className="bg-white rounded-lg overflow-hidden shadow-lg">
               <img
-                src="armario-personal-organizer.jpg"
+                src="/armario-personal-organizer.jpg"
                 alt="Organização de armários e closets"
-                className="w-full h-64 object-cover"
+                className="w-full h-64 object-cover object-top"
               />
               <div className="p-6">
                 <h3 className="text-2xl font-bold text-[#37332F] mb-3">
-                  Closets e Armários
+                  Armários e Closets
                 </h3>
-                <p className="text-[#37332F] mb-2">
-                  Organização de guarda-roupas e closets com setorização,
-                  categorias, cores e uso inteligente de cabides, colmeias,
-                  caixas e divisórias.
-                </p>
-                <p className="text-sm text-[#7D7C60]">
-                  Ideal para quem quer praticidade na hora de se vestir e
-                  manter tudo sempre em ordem.
+                <p className="text-[#37332F]">
+                  Transforme seu guarda-roupa em um espaço funcional e inspirador
+                  com organização por categorias e cores.
                 </p>
               </div>
             </div>
 
-            {/* Cozinhas */}
+            {/* Serviço 2 */}
             <div className="bg-white rounded-lg overflow-hidden shadow-lg">
               <img
-                src="cozinha-personal-organizer.jpg"
-                alt="Organização de cozinhas e despensas"
-                className="w-full h-64 object-cover"
+                src="/cozinha-personal-organizer.jpg"
+                alt="Organização de cozinhas"
+                className="w-full h-64 object-cover object-top"
               />
               <div className="p-6">
                 <h3 className="text-2xl font-bold text-[#37332F] mb-3">
                   Cozinhas e Despensas
                 </h3>
-                <p className="text-[#37332F] mb-2">
-                  Organização de armários, gavetas, utensílios e mantimentos
-                  para facilitar o preparo das refeições e o dia a dia da
-                  família.
-                </p>
-                <p className="text-sm text-[#7D7C60]">
-                  Cada item tem seu lugar definido, com foco em segurança,
-                  higiene e praticidade.
+                <p className="text-[#37332F]">
+                  Otimize sua cozinha com soluções práticas que facilitam o
+                  preparo dos alimentos e o dia a dia.
                 </p>
               </div>
             </div>
 
-            {/* Escritórios */}
+            {/* Serviço 3 */}
             <div className="bg-white rounded-lg overflow-hidden shadow-lg">
               <img
-                src="escritório-personal-organizer.jpg"
-                alt="Organização de escritórios e home offices"
-                className="w-full h-64 object-cover"
+                src="/escritorio-personal-organizer.jpg"
+                alt="Organização de escritórios"
+                className="w-full h-64 object-cover object-top"
               />
               <div className="p-6">
                 <h3 className="text-2xl font-bold text-[#37332F] mb-3">
                   Escritórios e Home Offices
                 </h3>
-                <p className="text-[#37332F] mb-2">
-                  Organização de documentos, materiais, gavetas e estação de
-                  trabalho para aumentar foco e produtividade.
-                </p>
-                <p className="text-sm text-[#7D7C60]">
-                  Ideal para quem trabalha em casa e precisa de um ambiente
-                  organizado para produzir melhor.
+                <p className="text-[#37332F]">
+                  Crie um ambiente de trabalho organizado, produtivo e agradável
+                  para o seu dia a dia.
                 </p>
               </div>
             </div>
@@ -346,7 +284,7 @@ export default function PersonalOrganizerLanding() {
             <div>
               <img
                 src="/raquel-martins.jpeg"
-                alt="Personal Organizer Raquel Martins em São Paulo"
+                alt="Raquel Martins"
                 className="w-full max-w-sm mx-auto rounded-lg shadow-lg"
               />
             </div>
@@ -356,41 +294,41 @@ export default function PersonalOrganizerLanding() {
                 className="text-4xl font-bold text-[#37332F] mb-6"
                 style={{ fontFamily: "Playfair Display, serif" }}
               >
-                Sobre a Personal Organizer
+                Sobre a Raquel
               </h2>
 
-              <p className="text-lg text-[#37332F] mb-4 leading-relaxed">
-                Com mais de <strong>8 anos de experiência</strong> em
-                organização residencial, a Personal Organizer{" "}
-                <strong>Raquel Martins</strong> já ajudou dezenas de famílias
-                em São Paulo a viverem em casas mais leves, funcionais e
-                fáceis de manter.
-              </p>
-
-              <p className="text-lg text-[#37332F] mb-4 leading-relaxed">
-                Unindo técnica, sensibilidade e olhar estético, cada projeto é
-                pensado de forma personalizada, respeitando a rotina, os
-                hábitos e o estilo de vida de quem mora no espaço.
+              <p className="text-lg text-[#37332F] mb-6 leading-relaxed">
+                Com mais de 8 anos de experiência em organização residencial,
+                Raquel Martins é especialista em transformar espaços caóticos em
+                ambientes funcionais e harmoniosos.
               </p>
 
               <p className="text-lg text-[#37332F] mb-6 leading-relaxed">
-                Mais do que “organizar”, o objetivo é transformar a relação
-                das pessoas com a casa, trazendo conforto, praticidade e
-                bem-estar no dia a dia.
+                Formada em Design de Interiores e certificada em Personal
+                Organizing, ela desenvolveu uma metodologia que une praticidade,
+                estética e respeito ao estilo de vida de cada cliente.
+              </p>
+
+              <p className="text-lg text-[#37332F] mb-8 leading-relaxed">
+                Sua missão é ajudar pessoas a viverem com mais leveza e
+                bem-estar, criando sistemas personalizados que realmente
+                funcionam no dia a dia.
               </p>
 
               <div className="flex items-center space-x-6">
                 <div className="text-center">
                   <div className="text-3xl font-bold text-[#7D7C60]">200+</div>
-                  <div className="text-[#37332F]">Projetos concluídos</div>
+                  <div className="text-[#37332F]">Projetos</div>
                 </div>
                 <div className="text-center">
                   <div className="text-3xl font-bold text-[#7D7C60]">8</div>
-                  <div className="text-[#37332F]">Anos de experiência</div>
+                  <div className="text-[#37332F]">Anos de Experiência</div>
                 </div>
                 <div className="text-center">
-                  <div className="text-3xl font-bold text-[#7D7C60]">100%</div>
-                  <div className="text-[#37332F]">Clientes satisfeitos</div>
+                  <div className="text-3xl font-bold text-[#7D7C60]">
+                    100%
+                  </div>
+                  <div className="text-[#37332F]">Satisfação</div>
                 </div>
               </div>
             </div>
@@ -406,41 +344,68 @@ export default function PersonalOrganizerLanding() {
               className="text-4xl font-bold text-[#37332F] mb-4"
               style={{ fontFamily: "Playfair Display, serif" }}
             >
-              O que dizem as clientes
+              O Que Dizem Nossos Clientes
             </h2>
             <p className="text-lg text-[#7D7C60] max-w-2xl mx-auto">
-              Depoimentos reais de quem já transformou a casa com a ajuda de
-              uma Personal Organizer profissional.
+              Depoimentos reais de quem transformou a casa com nossos serviços
             </p>
           </div>
 
           <div className="grid md:grid-cols-3 gap-8">
+            {/* Depoimento 1 */}
             <div className="bg-white p-6 rounded-lg shadow-lg">
-              <p className="italic text-[#37332F] leading-relaxed">
-                “A organização da Raquel mudou completamente meu dia a dia.
-                Hoje minha rotina é muito mais leve e encontro tudo com
-                facilidade.”
+              <div className="flex items-center mb-4">
+                <img
+                  src="/maria-silva.jpg"
+                  alt="Maria Silva"
+                  className="w-16 h-16 rounded-full object-cover mr-4"
+                />
+                <div>
+                  <h4 className="font-bold text-[#37332F]">Maria Silva</h4>
+                  <p className="text-[#7D7C60] text-sm">Executiva</p>
+                </div>
+              </div>
+              <p className="text-[#37332F] italic leading-relaxed">
+                "A organização da Raquel mudou completamente minha rotina. Hoje
+                encontro tudo com facilidade e tenho mais tempo para a família."
               </p>
-              <p className="text-[#7D7C60] mt-4 font-semibold">— Maria, Vila Mariana</p>
             </div>
 
+            {/* Depoimento 2 */}
             <div className="bg-white p-6 rounded-lg shadow-lg">
-              <p className="italic text-[#37332F] leading-relaxed">
-                “Profissional excelente! Minha casa ficou funcional, bonita
-                e muito mais prática. Valeu cada minuto do processo.”
-              </p>
-              <p className="text-[#7D7C60] mt-4 font-semibold">
-                — Ana, Perdizes
+              <div className="flex items-center mb-4">
+                <img
+                  src="/ana-costa.jpg"
+                  alt="Ana Costa"
+                  className="w-16 h-16 rounded-full object-cover mr-4"
+                />
+                <div>
+                  <h4 className="font-bold text-[#37332F]">Ana Costa</h4>
+                  <p className="text-[#7D7C60] text-sm">Empresária</p>
+                </div>
+              </div>
+              <p className="text-[#37332F] italic leading-relaxed">
+                "Mais do que deixar tudo arrumado, ela criou um sistema que
+                funciona no meu dia a dia corrido. Valeu cada minuto."
               </p>
             </div>
 
+            {/* Depoimento 3 */}
             <div className="bg-white p-6 rounded-lg shadow-lg">
-              <p className="italic text-[#37332F] leading-relaxed">
-                “Recomendo de olhos fechados. Organização personalizada, sem
-                julgamentos e com muito cuidado em cada detalhe.”
-              </p>
-              <p className="text-[#7D7C60] mt-4 font-semibold">
-                — Carla, Moema
+              <div className="flex items-center mb-4">
+                <img
+                  src="/carla-mendes.jpg"
+                  alt="Carla Mendes"
+                  className="w-16 h-16 rounded-full object-cover mr-4"
+                />
+                <div>
+                  <h4 className="font-bold text-[#37332F]">Carla Mendes</h4>
+                  <p className="text-[#7D7C60] text-sm">Professora</p>
+                </div>
+              </div>
+              <p className="text-[#37332F] italic leading-relaxed">
+                "Profissional cuidadosa, organizada e muito atenciosa. Minha
+                casa nunca esteve tão bonita e funcional."
               </p>
             </div>
           </div>
@@ -455,156 +420,140 @@ export default function PersonalOrganizerLanding() {
               className="text-4xl font-bold text-[#37332F] mb-4"
               style={{ fontFamily: "Playfair Display, serif" }}
             >
-              Como funciona o processo de organização
+              Como Funciona
             </h2>
             <p className="text-lg text-[#7D7C60] max-w-2xl mx-auto">
-              Um passo a passo claro para você entender exatamente como é
-              contratar uma Personal Organizer em São Paulo.
+              Um processo simples e eficiente para organizar seus espaços
             </p>
           </div>
 
           <div className="grid md:grid-cols-3 gap-8">
             <div className="text-center">
               <div className="w-20 h-20 mx-auto mb-6 bg-[#7D7C60] rounded-full flex items-center justify-center">
-                <span className="text-3xl text-white font-bold">1</span>
+                <span className="text-3xl font-bold text-white">1</span>
               </div>
-              <h3 className="text-2xl font-bold text-[#37332F] mb-3">
-                Contato e avaliação
-              </h3>
+              <h3 className="text-2xl font-bold text-[#37332F] mb-4">Contato</h3>
               <p className="text-[#37332F] leading-relaxed">
-                Você envia fotos ou vídeos do ambiente e conversamos sobre
-                suas dores, objetivos e prioridades.
+                Você entra em contato pelo formulário ou WhatsApp e agenda uma
+                conversa inicial.
               </p>
             </div>
 
             <div className="text-center">
               <div className="w-20 h-20 mx-auto mb-6 bg-[#7D7C60] rounded-full flex items-center justify-center">
-                <span className="text-3xl text-white font-bold">2</span>
+                <span className="text-3xl font-bold text-white">2</span>
               </div>
-              <h3 className="text-2xl font-bold text-[#37332F] mb-3">
-                Proposta personalizada
+              <h3 className="text-2xl font-bold text-[#37332F] mb-4">
+                Visita Técnica
               </h3>
               <p className="text-[#37332F] leading-relaxed">
-                Envio de uma proposta sob medida, com quantidade de dias
-                necessários, investimento e sugestões de materiais.
+                Avaliamos os ambientes, entendemos suas necessidades e definimos
+                o melhor plano para o seu espaço.
               </p>
             </div>
 
             <div className="text-center">
               <div className="w-20 h-20 mx-auto mb-6 bg-[#7D7C60] rounded-full flex items-center justify-center">
-                <span className="text-3xl text-white font-bold">3</span>
+                <span className="text-3xl font-bold text-white">3</span>
               </div>
-              <h3 className="text-2xl font-bold text-[#37332F] mb-3">
-                Organização e entrega
+              <h3 className="text-2xl font-bold text-[#37332F] mb-4">
+                Organização Personalizada
               </h3>
               <p className="text-[#37332F] leading-relaxed">
-                Organização do ambiente, criação de sistema funcional e
-                orientações para manutenção no dia a dia.
+                Execução completa do projeto com sistemas sob medida para sua
+                rotina e seu estilo de vida.
               </p>
             </div>
-          </div>
-        </div>
-      </section>
-
-      {/* QUANTO CUSTA */}
-      <section className="py-20 bg-[#FDF7F2]">
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2
-            className="text-3xl font-bold text-[#37332F] mb-4"
-            style={{ fontFamily: "Playfair Display, serif" }}
-          >
-            Quanto custa contratar uma Personal Organizer?
-          </h2>
-          <p className="text-lg text-[#37332F] mb-4 leading-relaxed">
-            O investimento em uma <strong>Personal Organizer em São Paulo</strong>{" "}
-            depende do tamanho do ambiente, da quantidade de itens e da
-            complexidade do projeto. Em média, projetos residenciais podem
-            variar de <strong>um a vários dias de organização</strong>.
-          </p>
-          <p className="text-lg text-[#37332F] mb-4 leading-relaxed">
-            Para orçamentos mais precisos, trabalhamos com avaliação personalizada
-            a partir de fotos, vídeos ou visita técnica. Assim, você recebe
-            uma proposta alinhada à sua realidade e expectativas.
-          </p>
-          <p className="text-lg text-[#37332F] leading-relaxed">
-            Clique no botão abaixo ou envie uma mensagem pelo formulário para
-            solicitar um <strong>orçamento sem compromisso</strong>.
-          </p>
-
-          <div className="mt-6">
-            <a
-              href="#contato"
-              className="inline-flex items-center justify-center px-8 py-4 rounded-lg bg-[#37332F] text-white hover:bg-[#2a251f] transition-colors"
-            >
-              Solicitar orçamento agora
-            </a>
           </div>
         </div>
       </section>
 
       {/* PORTFÓLIO */}
-      <section id="portfolio" className="py-20 bg-white">
+      <section id="portfolio" className="py-20 bg-[#FDF7F2]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2
               className="text-4xl font-bold text-[#37332F] mb-4"
               style={{ fontFamily: "Playfair Display, serif" }}
             >
-              Portfólio de Antes e Depois
+              Antes e Depois
             </h2>
             <p className="text-lg text-[#7D7C60] max-w-2xl mx-auto">
-              Alguns exemplos reais de transformações realizadas em closets,
-              cozinhas e home offices.
+              Transformações reais em closets, despensas e escritórios
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <div className="bg-[#FDF7F2] rounded-lg shadow-lg overflow-hidden">
-              <img
-                src="closet-antes.jpg"
-                alt="Closet antes da organização"
-                className="w-full h-64 object-cover"
-              />
+          <div className="grid md:grid-cols-3 gap-8">
+            {/* Closet */}
+            <div className="bg-white rounded-lg overflow-hidden shadow-lg">
+              <div className="grid grid-cols-2 h-64">
+                <img
+                  src="/closet-antes.jpg"
+                  alt="Closet antes da organização"
+                  className="w-full h-full object-cover"
+                />
+                <img
+                  src="/closet-depois.jpg"
+                  alt="Closet depois da organização"
+                  className="w-full h-full object-cover"
+                />
+              </div>
+              <div className="p-4">
+                <h4 className="font-bold text-[#37332F] mb-2">
+                  Closet Residencial
+                </h4>
+                <p className="text-sm text-[#7D7C60]">
+                  Organização por categoria, cores e frequência de uso.
+                </p>
+              </div>
             </div>
 
-            <div className="bg-[#FDF7F2] rounded-lg shadow-lg overflow-hidden">
-              <img
-                src="despensa-antes.jpg"
-                alt="Despensa antes da organização"
-                className="w-full h-64 object-cover"
-              />
+            {/* Despensa */}
+            <div className="bg-white rounded-lg overflow-hidden shadow-lg">
+              <div className="grid grid-cols-2 h-64">
+                <img
+                  src="/despensa-antes.jpg"
+                  alt="Despensa antes da organização"
+                  className="w-full h-full object-cover"
+                />
+                <img
+                  src="/despensa-depois.jpg"
+                  alt="Despensa depois da organização"
+                  className="w-full h-full object-cover"
+                />
+              </div>
+              <div className="p-4">
+                <h4 className="font-bold text-[#37332F] mb-2">
+                  Despensa Gourmet
+                </h4>
+                <p className="text-sm text-[#7D7C60]">
+                  Setorização inteligente para facilitar o dia a dia na cozinha.
+                </p>
+              </div>
             </div>
 
-            <div className="bg-[#FDF7F2] rounded-lg shadow-lg overflow-hidden">
-              <img
-                src="escritorio-antes.jpg"
-                alt="Escritório antes da organização"
-                className="w-full h-64 object-cover"
-              />
+            {/* Escritório */}
+            <div className="bg-white rounded-lg overflow-hidden shadow-lg">
+              <div className="grid grid-cols-2 h-64">
+                <img
+                  src="/escritorio-antes.jpg"
+                  alt="Escritório antes da organização"
+                  className="w-full h-full object-cover"
+                />
+                <img
+                  src="/escritorio-depois.jpg"
+                  alt="Escritório depois da organização"
+                  className="w-full h-full object-cover"
+                />
+              </div>
+              <div className="p-4">
+                <h4 className="font-bold text-[#37332F] mb-2">Home Office</h4>
+                <p className="text-sm text-[#7D7C60]">
+                  Espaço de trabalho funcional, limpo e produtivo.
+                </p>
+              </div>
             </div>
           </div>
-        </div>
-      </section>
-
-      {/* REGIÕES ATENDIDAS */}
-      <section className="py-20 bg-[#FDF7F2]">
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2
-            className="text-3xl font-bold text-[#37332F] mb-4"
-            style={{ fontFamily: "Playfair Display, serif" }}
-          >
-            Regiões atendidas em São Paulo
-          </h2>
-          <p className="text-lg text-[#37332F] mb-4 leading-relaxed">
-            Atendimento em toda a cidade de São Paulo e região metropolitana,
-            incluindo: Zona Norte, Zona Sul, Zona Leste, Zona Oeste, Centro,
-            além de Alphaville, Osasco, Barueri, Santana de Parnaíba e região.
-          </p>
-          <p className="text-lg text-[#37332F] leading-relaxed">
-            Ao preencher o formulário ou chamar pelo WhatsApp, você informa
-            seu bairro e já alinhamos a melhor forma de atendimento para a sua
-            localização.
-          </p>
         </div>
       </section>
 
@@ -616,11 +565,11 @@ export default function PersonalOrganizerLanding() {
               className="text-4xl font-bold text-[#37332F] mb-4"
               style={{ fontFamily: "Playfair Display, serif" }}
             >
-              Dúvidas frequentes
+              Dúvidas Frequentes
             </h2>
             <p className="text-lg text-[#7D7C60]">
-              Algumas perguntas comuns de quem está contratando uma Personal
-              Organizer pela primeira vez.
+              Tire suas principais dúvidas sobre os serviços de personal
+              organizer
             </p>
           </div>
 
@@ -628,19 +577,15 @@ export default function PersonalOrganizerLanding() {
             {[
               {
                 q: "Organizar é caro?",
-                a: "A organização é um investimento que retorna em economia de tempo, menos estresse, melhor aproveitamento dos espaços e redução de compras desnecessárias. Os valores são ajustados à sua realidade e ao tamanho do projeto.",
+                a: "A organização é um investimento que retorna em economia de tempo, produtividade e redução de compras desnecessárias.",
               },
               {
-                q: "Preciso comprar caixas e organizadores antes?",
-                a: "Não necessariamente. Primeiro avaliamos o que você já tem em casa. Só indicamos a compra de organizadores extras quando eles realmente vão fazer diferença no resultado e na manutenção do sistema.",
+                q: "Preciso comprar caixas organizadoras?",
+                a: "Nem sempre. Primeiro avaliamos o que você já possui e só então indicamos produtos, sempre com foco em custo-benefício.",
               },
               {
-                q: "Quanto tempo leva para organizar um ambiente?",
-                a: "Depende do tamanho, da quantidade de itens e do nível atual de acúmulo. Um closet pode levar de 4 a 8 horas; já uma casa completa pode demandar alguns dias de trabalho.",
-              },
-              {
-                q: "Vou precisar jogar muitas coisas fora?",
-                a: "Você sempre tem a palavra final. O processo é feito com muito respeito à sua história e aos seus objetos. A ideia é te ajudar a decidir o que faz sentido manter e o que já cumpriu seu ciclo.",
+                q: "Quanto tempo leva a organização?",
+                a: "Depende do tamanho e da complexidade do ambiente. Um closet leva de 4 a 8 horas; uma casa inteira pode levar alguns dias.",
               },
             ].map((item, index) => (
               <div
@@ -648,10 +593,11 @@ export default function PersonalOrganizerLanding() {
                 className="border border-[#7D7C60]/20 rounded-lg"
               >
                 <button
-                  className="w-full p-6 flex justify-between items-center hover:bg-[#FDF7F2] transition-colors text-left"
+                  type="button"
+                  className="w-full p-6 text-left flex justify-between items-center hover:bg-[#FDF7F2] transition-colors"
                   onClick={() => toggleFaq(index)}
                 >
-                  <h4 className="font-bold text-lg text-[#37332F]">
+                  <h4 className="font-bold text-[#37332F] text-lg">
                     {item.q}
                   </h4>
                   <i
@@ -682,17 +628,16 @@ export default function PersonalOrganizerLanding() {
               className="text-4xl font-bold text-[#37332F] mb-4"
               style={{ fontFamily: "Playfair Display, serif" }}
             >
-              Entre em contato
+              Entre em Contato
             </h2>
             <p className="text-lg text-[#7D7C60] max-w-2xl mx-auto">
-              Pronta para transformar sua casa? Envie sua mensagem e receba um
-              retorno com as melhores opções para o seu projeto de organização
-              residencial.
+              Pronta para transformar sua casa? Envie sua mensagem e vamos
+              conversar sobre o seu projeto.
             </p>
           </div>
 
           <div className="grid lg:grid-cols-2 gap-12">
-            {/* FORM */}
+            {/* Formulário */}
             <div>
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div>
@@ -761,16 +706,16 @@ export default function PersonalOrganizerLanding() {
                   type="submit"
                   className="w-full bg-[#37332F] text-white py-4 rounded-lg hover:bg-[#2a251f] transition-colors"
                 >
-                  Enviar mensagem
+                  Enviar Mensagem
                 </button>
               </form>
             </div>
 
-            {/* CONTATO LATERAL */}
+            {/* Contato lateral */}
             <div className="space-y-8">
               <div>
                 <h3 className="text-2xl font-bold text-[#37332F] mb-4">
-                  Outras formas de contato
+                  Outras Formas de Contato
                 </h3>
 
                 <div className="space-y-4">
@@ -780,6 +725,8 @@ export default function PersonalOrganizerLanding() {
                     </div>
                     <a
                       href="https://wa.me/5511947358000"
+                      target="_blank"
+                      rel="noopener noreferrer"
                       className="text-[#37332F] hover:text-[#7D7C60]"
                     >
                       (11) 94735-8000
@@ -801,15 +748,15 @@ export default function PersonalOrganizerLanding() {
               </div>
 
               <div className="bg-white p-6 rounded-lg shadow-lg">
-                <h4 className="font-bold text-[#37332F] mb-3">Horário de atendimento</h4>
+                <h4 className="font-bold text-[#37332F] mb-3">Horário</h4>
                 <p className="text-[#37332F]">
-                  <strong>Seg a Sex:</strong> 8h às 20h
+                  <strong>Seg a Sex:</strong> 8h–20h
                 </p>
                 <p className="text-[#37332F]">
-                  <strong>Sábado:</strong> 8h às 18h
+                  <strong>Sábado:</strong> 8h–18h
                 </p>
                 <p className="text-[#37332F]">
-                  <strong>Domingo:</strong> fechado
+                  <strong>Domingo:</strong> Fechado
                 </p>
               </div>
             </div>
@@ -829,14 +776,13 @@ export default function PersonalOrganizerLanding() {
                 Raquel Martins
               </h3>
               <p className="text-gray-300 leading-relaxed">
-                Personal Organizer em São Paulo, especializada em organização
-                residencial personalizada para quem busca mais leveza e
-                funcionalidade no dia a dia.
+                Transformando espaços, organizando vidas. Especialista em
+                soluções personalizadas de organização residencial.
               </p>
             </div>
 
             <div>
-              <h4 className="font-bold mb-4">Navegação</h4>
+              <h4 className="font-bold mb-4">Links Rápidos</h4>
               <ul className="space-y-2">
                 <li>
                   <a
@@ -874,20 +820,26 @@ export default function PersonalOrganizerLanding() {
             </div>
 
             <div>
-              <h4 className="font-bold mb-4">Redes sociais</h4>
+              <h4 className="font-bold mb-4">Redes Sociais</h4>
               <div className="flex space-x-4">
                 <a
                   href="https://www.instagram.com/raquelmartinsorganiza/"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="w-10 h-10 bg-[#7D7C60] rounded-full flex items-center justify-center hover:bg-[#6a6850] transition-colors"
                 >
                   <i className="ri-instagram-line text-lg" />
                 </a>
+
                 <a
                   href="https://wa.me/5511947358000"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="w-10 h-10 bg-[#7D7C60] rounded-full flex items-center justify-center hover:bg-[#6a6850] transition-colors"
                 >
                   <i className="ri-whatsapp-line text-lg" />
                 </a>
+
                 <a
                   href="mailto:contato@raquelmartinsorganiza.com.br"
                   className="w-10 h-10 bg-[#7D7C60] rounded-full flex items-center justify-center hover:bg-[#6a6850] transition-colors"
@@ -899,7 +851,7 @@ export default function PersonalOrganizerLanding() {
           </div>
 
           <div className="border-t border-gray-600 pt-8 flex flex-col md:flex-row justify-between items-center">
-            <p className="text-gray-300 text-sm">
+            <p className="text-gray-300">
               © {new Date().getFullYear()} Raquel Martins Organização. Todos os
               direitos reservados.
             </p>
@@ -907,7 +859,7 @@ export default function PersonalOrganizerLanding() {
         </div>
       </footer>
 
-      {/* BOTÃO WHATSAPP */}
+      {/* BOTÃO WHATSAPP FLUTUANTE */}
       <a
         href="https://wa.me/5511947358000?text=Olá! Gostaria de saber mais sobre os serviços de organização residencial."
         target="_blank"
