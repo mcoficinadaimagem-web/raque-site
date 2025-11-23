@@ -14,13 +14,8 @@ export default function PersonalOrganizerLanding() {
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
-    if (
-      !formData.name ||
-      !formData.email ||
-      !formData.phone ||
-      !formData.message
-    ) {
-      alert("Por favor, preencha todos os campos");
+    if (!formData.name || !formData.email || !formData.phone || !formData.message) {
+      alert("Por favor, preencha todos os campos.");
       return;
     }
 
@@ -49,7 +44,7 @@ export default function PersonalOrganizerLanding() {
   return (
     <div className="min-h-screen bg-white">
       {/* NAV */}
-      <nav className="bg-white shadow-sm sticky top-0 z-50">
+      <nav className="bg-white shadow-sm sticky top-0 z-40">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
             <h1
@@ -61,28 +56,16 @@ export default function PersonalOrganizerLanding() {
 
             <div className="hidden md:block">
               <div className="ml-10 flex items-baseline space-x-8">
-                <a
-                  href="#servicos"
-                  className="text-[#37332F] hover:text-[#7D7C60] transition-colors"
-                >
+                <a href="#servicos" className="text-[#37332F] hover:text-[#7D7C60]">
                   Serviços
                 </a>
-                <a
-                  href="#sobre"
-                  className="text-[#37332F] hover:text-[#7D7C60] transition-colors"
-                >
+                <a href="#sobre" className="text-[#37332F] hover:text-[#7D7C60]">
                   Sobre
                 </a>
-                <a
-                  href="#portfolio"
-                  className="text-[#37332F] hover:text-[#7D7C60] transition-colors"
-                >
+                <a href="#portfolio" className="text-[#37332F] hover:text-[#7D7C60]">
                   Portfólio
                 </a>
-                <a
-                  href="#contato"
-                  className="text-[#37332F] hover:text-[#7D7C60] transition-colors"
-                >
+                <a href="#contato" className="text-[#37332F] hover:text-[#7D7C60]">
                   Contato
                 </a>
               </div>
@@ -91,8 +74,8 @@ export default function PersonalOrganizerLanding() {
         </div>
       </nav>
 
-      {/* HERO */}
-      <section className="relative bg-[#FDF7F2] py-16 lg:py-24">
+      {/* HERO – VARIAÇÃO 1A */}
+      <section className="relative bg-[#FDF7F2] py-16 lg:py-24 overflow-hidden">
         <div className="absolute inset-0">
           <img
             src="/raquel-martins.jpeg"
@@ -104,42 +87,52 @@ export default function PersonalOrganizerLanding() {
 
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
-            {/* TEXTO PRINCIPAL */}
+            {/* Texto principal */}
             <div>
-              <h1
-                className="text-4xl lg:text-6xl font-bold text-[#37332F] mb-6"
+              <p className="uppercase tracking-[0.2em] text-sm text-[#7D7C60] mb-3">
+                Personal Organizer em São Paulo
+              </p>
+
+              <h2
+                className="text-4xl lg:text-5xl font-bold text-[#37332F] mb-4"
                 style={{ fontFamily: "Playfair Display, serif" }}
               >
-                Personal Organizer Profissional em São Paulo
-              </h1>
+                Organize sua casa e ganhe tempo para o que realmente importa
+              </h2>
 
-              <p className="text-xl text-[#37332F] mb-8">
-                Organize sua casa e transforme sua rotina com um sistema de
-                organização pensado especialmente para você.
+              <p className="text-lg lg:text-xl text-[#37332F] mb-6">
+                Chega de perder tempo procurando coisas ou vivendo em um ambiente
+                que te cansa. Com a organização profissional, sua casa fica funcional,
+                bonita e fácil de manter no dia a dia.
               </p>
+
+              <ul className="text-[#37332F] mb-8 space-y-2 text-sm sm:text-base">
+                <li>• Organização completa de closets, cozinhas, despensas e home office</li>
+                <li>• Sistemas pensados para a sua rotina – nada engessado</li>
+                <li>• Mais praticidade, bem-estar e sensação de leveza em casa</li>
+              </ul>
 
               <div className="flex flex-col sm:flex-row gap-4">
                 <a
-                  href="#servicos"
-                  className="bg-[#37332F] text-white px-8 py-4 rounded-lg hover:bg-[#2a251f] transition-colors"
+                  href="#contato"
+                  className="bg-[#37332F] text-white px-8 py-4 rounded-lg text-center hover:bg-[#2a251f] transition-colors"
                 >
-                  Ver Serviços
+                  Agendar avaliação gratuita
                 </a>
-
                 <a
-                  href="#sobre"
-                  className="border-2 border-[#37332F] text-[#37332F] px-8 py-4 rounded-lg hover:bg-[#37332F] hover:text-white transition-colors"
+                  href="https://wa.me/5511947358000?text=Olá! Gostaria de saber mais sobre os serviços de Personal Organizer."
+                  className="border-2 border-[#37332F] text-[#37332F] px-8 py-4 rounded-lg text-center hover:bg-[#37332F] hover:text-white transition-colors"
                 >
-                  Saiba Mais
+                  Falar pelo WhatsApp
                 </a>
               </div>
             </div>
 
-            {/* FOTO */}
+            {/* Foto */}
             <div className="lg:text-right">
               <img
                 src="/raquel-martins.jpeg"
-                alt="Raquel Martins - Organizadora Pessoal"
+                alt="Raquel Martins - Personal Organizer"
                 className="w-full max-w-sm mx-auto lg:ml-auto rounded-lg shadow-lg"
               />
             </div>
@@ -152,14 +145,14 @@ export default function PersonalOrganizerLanding() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2
-              className="text-4xl font-bold text-[#37332F] mb-4"
+              className="text-3xl lg:text-4xl font-bold text-[#37332F] mb-4"
               style={{ fontFamily: "Playfair Display, serif" }}
             >
-              Benefícios da Organização
+              Por que contratar uma Personal Organizer?
             </h2>
             <p className="text-lg text-[#7D7C60] max-w-2xl mx-auto">
-              Descubra como a organização pode transformar sua rotina e
-              bem-estar
+              A organização profissional vai muito além de “arrumar a bagunça”.
+              Ela cria um sistema inteligente que mantém sua casa em ordem.
             </p>
           </div>
 
@@ -169,11 +162,11 @@ export default function PersonalOrganizerLanding() {
                 <i className="ri-time-line text-2xl text-white" />
               </div>
               <h3 className="text-2xl font-bold text-[#37332F] mb-4">
-                Economia de Tempo
+                Mais tempo no dia a dia
               </h3>
               <p className="text-[#37332F]">
-                Encontre tudo rapidamente com sistemas eficientes que poupam
-                horas do seu dia.
+                Encontre tudo em segundos e elimine a sensação de perder tempo com
+                pequenas coisas.
               </p>
             </div>
 
@@ -182,10 +175,11 @@ export default function PersonalOrganizerLanding() {
                 <i className="ri-settings-3-line text-2xl text-white" />
               </div>
               <h3 className="text-2xl font-bold text-[#37332F] mb-4">
-                Mais Funcionalidade
+                Casa funcional de verdade
               </h3>
               <p className="text-[#37332F]">
-                Otimize cada espaço da sua casa com soluções inteligentes.
+                Cada item tem um lugar pensado para o seu jeito de viver, não só para
+                “ficar bonito na foto”.
               </p>
             </div>
 
@@ -194,10 +188,11 @@ export default function PersonalOrganizerLanding() {
                 <i className="ri-heart-3-line text-2xl text-white" />
               </div>
               <h3 className="text-2xl font-bold text-[#37332F] mb-4">
-                Redução do Estresse
+                Mais leveza e bem-estar
               </h3>
               <p className="text-[#37332F]">
-                Viva com mais tranquilidade em um ambiente harmonioso.
+                Um ambiente organizado diminui o estresse visual e traz sensação
+                de calma e aconchego.
               </p>
             </div>
           </div>
@@ -209,13 +204,13 @@ export default function PersonalOrganizerLanding() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2
-              className="text-4xl font-bold text-[#37332F] mb-4"
+              className="text-3xl lg:text-4xl font-bold text-[#37332F] mb-4"
               style={{ fontFamily: "Playfair Display, serif" }}
             >
-              Nossos Serviços
+              Serviços de Organização Residencial
             </h2>
             <p className="text-lg text-[#7D7C60] max-w-2xl mx-auto">
-              Soluções personalizadas para cada ambiente da sua casa
+              Cada projeto é personalizado para a sua rotina, espaço e objetivos.
             </p>
           </div>
 
@@ -232,8 +227,8 @@ export default function PersonalOrganizerLanding() {
                   Armários e Closets
                 </h3>
                 <p className="text-[#37332F]">
-                  Transforme seu guarda-roupa em um espaço funcional e inspirador
-                  com organização por categorias e cores.
+                  Organização completa de guarda-roupas, closets e roupeiros com
+                  setorização inteligente, dobra padrão e cabides alinhados.
                 </p>
               </div>
             </div>
@@ -242,7 +237,7 @@ export default function PersonalOrganizerLanding() {
             <div className="bg-white rounded-lg overflow-hidden shadow-lg">
               <img
                 src="/cozinha-personal-organizer.jpg"
-                alt="Organização de cozinhas"
+                alt="Organização de cozinhas e despensas"
                 className="w-full h-64 object-cover object-top"
               />
               <div className="p-6">
@@ -250,8 +245,8 @@ export default function PersonalOrganizerLanding() {
                   Cozinhas e Despensas
                 </h3>
                 <p className="text-[#37332F]">
-                  Otimize sua cozinha com soluções práticas que facilitam o
-                  preparo dos alimentos e o dia a dia.
+                  Organização de armários, gavetas e despensas para facilitar o
+                  preparo das refeições e evitar desperdícios.
                 </p>
               </div>
             </div>
@@ -260,16 +255,16 @@ export default function PersonalOrganizerLanding() {
             <div className="bg-white rounded-lg overflow-hidden shadow-lg">
               <img
                 src="/escritorio-personal-organizer.jpg"
-                alt="Organização de escritórios"
+                alt="Organização de escritórios e home office"
                 className="w-full h-64 object-cover object-top"
               />
               <div className="p-6">
                 <h3 className="text-2xl font-bold text-[#37332F] mb-3">
-                  Escritórios e Home Offices
+                  Escritórios e Home Office
                 </h3>
                 <p className="text-[#37332F]">
-                  Crie um ambiente de trabalho organizado, produtivo e agradável
-                  para o seu dia a dia.
+                  Ambientes de trabalho organizados para aumentar a concentração,
+                  produtividade e clareza mental.
                 </p>
               </div>
             </div>
@@ -291,44 +286,40 @@ export default function PersonalOrganizerLanding() {
 
             <div>
               <h2
-                className="text-4xl font-bold text-[#37332F] mb-6"
+                className="text-3xl lg:text-4xl font-bold text-[#37332F] mb-6"
                 style={{ fontFamily: "Playfair Display, serif" }}
               >
-                Sobre a Raquel
+                Sobre a Raquel Martins
               </h2>
 
-              <p className="text-lg text-[#37332F] mb-6 leading-relaxed">
+              <p className="text-lg text-[#37332F] mb-4 leading-relaxed">
                 Com mais de 8 anos de experiência em organização residencial,
-                Raquel Martins é especialista em transformar espaços caóticos em
-                ambientes funcionais e harmoniosos.
+                Raquel Martins já transformou dezenas de lares em São Paulo e região.
+              </p>
+
+              <p className="text-lg text-[#37332F] mb-4 leading-relaxed">
+                Com formação em áreas ligadas à organização e experiência prática
+                em projetos reais, ela desenvolveu um método que une estética,
+                funcionalidade e, principalmente, a rotina de cada família.
               </p>
 
               <p className="text-lg text-[#37332F] mb-6 leading-relaxed">
-                Formada em Design de Interiores e certificada em Personal
-                Organizing, ela desenvolveu uma metodologia que une praticidade,
-                estética e respeito ao estilo de vida de cada cliente.
-              </p>
-
-              <p className="text-lg text-[#37332F] mb-8 leading-relaxed">
-                Sua missão é ajudar pessoas a viverem com mais leveza e
-                bem-estar, criando sistemas personalizados que realmente
-                funcionam no dia a dia.
+                Nada de soluções engessadas: cada projeto é pensado junto com o
+                cliente, para que a organização seja fácil de manter no dia a dia.
               </p>
 
               <div className="flex items-center space-x-6">
                 <div className="text-center">
                   <div className="text-3xl font-bold text-[#7D7C60]">200+</div>
-                  <div className="text-[#37332F]">Projetos</div>
+                  <div className="text-[#37332F] text-sm">Projetos realizados</div>
                 </div>
                 <div className="text-center">
                   <div className="text-3xl font-bold text-[#7D7C60]">8</div>
-                  <div className="text-[#37332F]">Anos de Experiência</div>
+                  <div className="text-[#37332F] text-sm">Anos de experiência</div>
                 </div>
                 <div className="text-center">
-                  <div className="text-3xl font-bold text-[#7D7C60]">
-                    100%
-                  </div>
-                  <div className="text-[#37332F]">Satisfação</div>
+                  <div className="text-3xl font-bold text-[#7D7C60]">100%</div>
+                  <div className="text-[#37332F] text-sm">Foco no cliente</div>
                 </div>
               </div>
             </div>
@@ -336,157 +327,26 @@ export default function PersonalOrganizerLanding() {
         </div>
       </section>
 
-      {/* DEPOIMENTOS */}
-      <section className="py-20 bg-[#FDF7F2]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2
-              className="text-4xl font-bold text-[#37332F] mb-4"
-              style={{ fontFamily: "Playfair Display, serif" }}
-            >
-              O Que Dizem Nossos Clientes
-            </h2>
-            <p className="text-lg text-[#7D7C60] max-w-2xl mx-auto">
-              Depoimentos reais de quem transformou a casa com nossos serviços
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-3 gap-8">
-            {/* Depoimento 1 */}
-            <div className="bg-white p-6 rounded-lg shadow-lg">
-              <div className="flex items-center mb-4">
-                <img
-                  src="/maria-silva.jpg"
-                  alt="Maria Silva"
-                  className="w-16 h-16 rounded-full object-cover mr-4"
-                />
-                <div>
-                  <h4 className="font-bold text-[#37332F]">Maria Silva</h4>
-                  <p className="text-[#7D7C60] text-sm">Executiva</p>
-                </div>
-              </div>
-              <p className="text-[#37332F] italic leading-relaxed">
-                "A organização da Raquel mudou completamente minha rotina. Hoje
-                encontro tudo com facilidade e tenho mais tempo para a família."
-              </p>
-            </div>
-
-            {/* Depoimento 2 */}
-            <div className="bg-white p-6 rounded-lg shadow-lg">
-              <div className="flex items-center mb-4">
-                <img
-                  src="/ana-costa.jpg"
-                  alt="Ana Costa"
-                  className="w-16 h-16 rounded-full object-cover mr-4"
-                />
-                <div>
-                  <h4 className="font-bold text-[#37332F]">Ana Costa</h4>
-                  <p className="text-[#7D7C60] text-sm">Empresária</p>
-                </div>
-              </div>
-              <p className="text-[#37332F] italic leading-relaxed">
-                "Mais do que deixar tudo arrumado, ela criou um sistema que
-                funciona no meu dia a dia corrido. Valeu cada minuto."
-              </p>
-            </div>
-
-            {/* Depoimento 3 */}
-            <div className="bg-white p-6 rounded-lg shadow-lg">
-              <div className="flex items-center mb-4">
-                <img
-                  src="/carla-mendes.jpg"
-                  alt="Carla Mendes"
-                  className="w-16 h-16 rounded-full object-cover mr-4"
-                />
-                <div>
-                  <h4 className="font-bold text-[#37332F]">Carla Mendes</h4>
-                  <p className="text-[#7D7C60] text-sm">Professora</p>
-                </div>
-              </div>
-              <p className="text-[#37332F] italic leading-relaxed">
-                "Profissional cuidadosa, organizada e muito atenciosa. Minha
-                casa nunca esteve tão bonita e funcional."
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* COMO FUNCIONA */}
-      <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2
-              className="text-4xl font-bold text-[#37332F] mb-4"
-              style={{ fontFamily: "Playfair Display, serif" }}
-            >
-              Como Funciona
-            </h2>
-            <p className="text-lg text-[#7D7C60] max-w-2xl mx-auto">
-              Um processo simples e eficiente para organizar seus espaços
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-3 gap-8">
-            <div className="text-center">
-              <div className="w-20 h-20 mx-auto mb-6 bg-[#7D7C60] rounded-full flex items-center justify-center">
-                <span className="text-3xl font-bold text-white">1</span>
-              </div>
-              <h3 className="text-2xl font-bold text-[#37332F] mb-4">Contato</h3>
-              <p className="text-[#37332F] leading-relaxed">
-                Você entra em contato pelo formulário ou WhatsApp e agenda uma
-                conversa inicial.
-              </p>
-            </div>
-
-            <div className="text-center">
-              <div className="w-20 h-20 mx-auto mb-6 bg-[#7D7C60] rounded-full flex items-center justify-center">
-                <span className="text-3xl font-bold text-white">2</span>
-              </div>
-              <h3 className="text-2xl font-bold text-[#37332F] mb-4">
-                Visita Técnica
-              </h3>
-              <p className="text-[#37332F] leading-relaxed">
-                Avaliamos os ambientes, entendemos suas necessidades e definimos
-                o melhor plano para o seu espaço.
-              </p>
-            </div>
-
-            <div className="text-center">
-              <div className="w-20 h-20 mx-auto mb-6 bg-[#7D7C60] rounded-full flex items-center justify-center">
-                <span className="text-3xl font-bold text-white">3</span>
-              </div>
-              <h3 className="text-2xl font-bold text-[#37332F] mb-4">
-                Organização Personalizada
-              </h3>
-              <p className="text-[#37332F] leading-relaxed">
-                Execução completa do projeto com sistemas sob medida para sua
-                rotina e seu estilo de vida.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* PORTFÓLIO */}
+      {/* PORTFÓLIO – ANTES E DEPOIS */}
       <section id="portfolio" className="py-20 bg-[#FDF7F2]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2
-              className="text-4xl font-bold text-[#37332F] mb-4"
+              className="text-3xl lg:text-4xl font-bold text-[#37332F] mb-4"
               style={{ fontFamily: "Playfair Display, serif" }}
             >
-              Antes e Depois
+              Antes e Depois da Organização
             </h2>
             <p className="text-lg text-[#7D7C60] max-w-2xl mx-auto">
-              Transformações reais em closets, despensas e escritórios
+              Veja alguns exemplos reais de transformação em closets, despensas
+              e escritórios.
             </p>
           </div>
 
           <div className="grid md:grid-cols-3 gap-8">
             {/* Closet */}
             <div className="bg-white rounded-lg overflow-hidden shadow-lg">
-              <div className="grid grid-cols-2 h-64">
+              <div className="grid grid-cols-2 h-56">
                 <img
                   src="/closet-antes.jpg"
                   alt="Closet antes da organização"
@@ -499,18 +359,16 @@ export default function PersonalOrganizerLanding() {
                 />
               </div>
               <div className="p-4">
-                <h4 className="font-bold text-[#37332F] mb-2">
-                  Closet Residencial
-                </h4>
+                <h3 className="font-bold text-[#37332F] mb-1">Closet Residencial</h3>
                 <p className="text-sm text-[#7D7C60]">
-                  Organização por categoria, cores e frequência de uso.
+                  Setorização por tipo de peça, cores e frequência de uso.
                 </p>
               </div>
             </div>
 
             {/* Despensa */}
             <div className="bg-white rounded-lg overflow-hidden shadow-lg">
-              <div className="grid grid-cols-2 h-64">
+              <div className="grid grid-cols-2 h-56">
                 <img
                   src="/despensa-antes.jpg"
                   alt="Despensa antes da organização"
@@ -523,18 +381,16 @@ export default function PersonalOrganizerLanding() {
                 />
               </div>
               <div className="p-4">
-                <h4 className="font-bold text-[#37332F] mb-2">
-                  Despensa Gourmet
-                </h4>
+                <h3 className="font-bold text-[#37332F] mb-1">Despensa Gourmet</h3>
                 <p className="text-sm text-[#7D7C60]">
-                  Setorização inteligente para facilitar o dia a dia na cozinha.
+                  Itens categorizados, etiquetas e fácil visualização de estoques.
                 </p>
               </div>
             </div>
 
             {/* Escritório */}
             <div className="bg-white rounded-lg overflow-hidden shadow-lg">
-              <div className="grid grid-cols-2 h-64">
+              <div className="grid grid-cols-2 h-56">
                 <img
                   src="/escritorio-antes.jpg"
                   alt="Escritório antes da organização"
@@ -547,9 +403,9 @@ export default function PersonalOrganizerLanding() {
                 />
               </div>
               <div className="p-4">
-                <h4 className="font-bold text-[#37332F] mb-2">Home Office</h4>
+                <h3 className="font-bold text-[#37332F] mb-1">Home Office</h3>
                 <p className="text-sm text-[#7D7C60]">
-                  Espaço de trabalho funcional, limpo e produtivo.
+                  Mesa limpa, arquivos categorizados e fluxo de trabalho organizado.
                 </p>
               </div>
             </div>
@@ -557,47 +413,186 @@ export default function PersonalOrganizerLanding() {
         </div>
       </section>
 
-      {/* FAQ */}
+      {/* DEPOIMENTOS – COM FOTOS */}
       <section className="py-20 bg-white">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2
-              className="text-4xl font-bold text-[#37332F] mb-4"
+              className="text-3xl lg:text-4xl font-bold text-[#37332F] mb-4"
               style={{ fontFamily: "Playfair Display, serif" }}
             >
-              Dúvidas Frequentes
+              O que as clientes dizem
+            </h2>
+            <p className="text-lg text-[#7D7C60] max-w-2xl mx-auto">
+              Depoimentos reais de quem já passou pela experiência de ter a casa
+              organizada profissionalmente.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-8">
+            {/* Depoimento 1 */}
+            <div className="bg-[#FDF7F2] p-6 rounded-lg shadow-lg">
+              <div className="flex items-center mb-4">
+                <img
+                  src="/maria-silva.jpg"
+                  alt="Maria Silva"
+                  className="w-16 h-16 rounded-full object-cover mr-4"
+                />
+                <div>
+                  <h4 className="font-bold text-[#37332F]">Maria Silva</h4>
+                  <p className="text-[#7D7C60] text-sm">Executiva e mãe de dois</p>
+                </div>
+              </div>
+              <p className="text-[#37332F] italic leading-relaxed text-sm">
+                “A Raquel transformou meu closet e a nossa despensa. Hoje eu ganho
+                tempo todos os dias e quase não compro nada repetido. Valeu cada centavo.”
+              </p>
+            </div>
+
+            {/* Depoimento 2 */}
+            <div className="bg-[#FDF7F2] p-6 rounded-lg shadow-lg">
+              <div className="flex items-center mb-4">
+                <img
+                  src="/ana-costa.jpg"
+                  alt="Ana Costa"
+                  className="w-16 h-16 rounded-full object-cover mr-4"
+                />
+                <div>
+                  <h4 className="font-bold text-[#37332F]">Ana Costa</h4>
+                  <p className="text-[#7D7C60] text-sm">Empresária</p>
+                </div>
+              </div>
+              <p className="text-[#37332F] italic leading-relaxed text-sm">
+                “Eu achava que não conseguiria manter a organização, mas o sistema
+                que ela criou é tão lógico que toda a família entrou no ritmo.”
+              </p>
+            </div>
+
+            {/* Depoimento 3 */}
+            <div className="bg-[#FDF7F2] p-6 rounded-lg shadow-lg">
+              <div className="flex items-center mb-4">
+                <img
+                  src="/carla-mendes.jpg"
+                  alt="Carla Mendes"
+                  className="w-16 h-16 rounded-full object-cover mr-4"
+                />
+                <div>
+                  <h4 className="font-bold text-[#37332F]">Carla Mendes</h4>
+                  <p className="text-[#7D7C60] text-sm">Professora</p>
+                </div>
+              </div>
+              <p className="text-[#37332F] italic leading-relaxed text-sm">
+                “Meu home office era um caos. Agora tenho espaço, clareza e vontade
+                de trabalhar. A sensação é de ter mudado de casa.”
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* COMO FUNCIONA */}
+      <section className="py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2
+              className="text-3xl lg:text-4xl font-bold text-[#37332F] mb-4"
+              style={{ fontFamily: "Playfair Display, serif" }}
+            >
+              Como funciona o processo de organização?
+            </h2>
+            <p className="text-lg text-[#7D7C60] max-w-2xl mx-auto">
+              Um passo a passo simples, transparente e pensado para deixar tudo
+              claro desde o primeiro contato.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-8">
+            <div className="text-center">
+              <div className="w-20 h-20 mx-auto mb-6 bg-[#7D7C60] rounded-full flex items-center justify-center">
+                <span className="text-3xl font-bold text-white">1</span>
+              </div>
+              <h3 className="text-2xl font-bold text-[#37332F] mb-3">
+                Avaliação inicial
+              </h3>
+              <p className="text-[#37332F] leading-relaxed text-sm">
+                Conversa pelo WhatsApp ou telefone para entender sua necessidade
+                e alinhar expectativas.
+              </p>
+            </div>
+
+            <div className="text-center">
+              <div className="w-20 h-20 mx-auto mb-6 bg-[#7D7C60] rounded-full flex items-center justify-center">
+                <span className="text-3xl font-bold text-white">2</span>
+              </div>
+              <h3 className="text-2xl font-bold text-[#37332F] mb-3">
+                Proposta e cronograma
+              </h3>
+              <p className="text-[#37332F] leading-relaxed text-sm">
+                Envio de proposta clara com etapas, prazos e, se necessário,
+                indicação de organizadores extras.
+              </p>
+            </div>
+
+            <div className="text-center">
+              <div className="w-20 h-20 mx-auto mb-6 bg-[#7D7C60] rounded-full flex items-center justify-center">
+                <span className="text-3xl font-bold text-white">3</span>
+              </div>
+              <h3 className="text-2xl font-bold text-[#37332F] mb-3">
+                Mão na massa
+              </h3>
+              <p className="text-[#37332F] leading-relaxed text-sm">
+                Triagem, categorização, organização e, no final, orientação para
+                você manter tudo em ordem.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ – VARIAÇÃO 2i (objetivo e direto) */}
+      <section className="py-20 bg-white border-t border-[#F0E8DD]">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2
+              className="text-3xl lg:text-4xl font-bold text-[#37332F] mb-4"
+              style={{ fontFamily: "Playfair Display, serif" }}
+            >
+              Dúvidas frequentes
             </h2>
             <p className="text-lg text-[#7D7C60]">
-              Tire suas principais dúvidas sobre os serviços de personal
-              organizer
+              Respostas rápidas para as principais perguntas sobre o serviço.
             </p>
           </div>
 
           <div className="space-y-4">
             {[
               {
-                q: "Organizar é caro?",
-                a: "A organização é um investimento que retorna em economia de tempo, produtividade e redução de compras desnecessárias.",
+                q: "Organizar com uma Personal Organizer é muito caro?",
+                a: "A organização é um investimento que retorna em tempo, bem-estar e economia. Você passa a usar melhor o que já tem e evita compras por excesso ou repetidas. Os projetos são personalizados de acordo com o tamanho do espaço e a complexidade.",
               },
               {
-                q: "Preciso comprar caixas organizadoras?",
-                a: "Nem sempre. Primeiro avaliamos o que você já possui e só então indicamos produtos, sempre com foco em custo-benefício.",
+                q: "Vou conseguir manter a organização depois?",
+                a: "Sim. O objetivo não é só deixar tudo bonito no dia, mas criar um sistema lógico, com categorias claras, que qualquer pessoa da casa consegue seguir. No final do projeto você recebe orientações para manutenção.",
               },
               {
-                q: "Quanto tempo leva a organização?",
-                a: "Depende do tamanho e da complexidade do ambiente. Um closet leva de 4 a 8 horas; uma casa inteira pode levar alguns dias.",
+                q: "Preciso comprar muitos produtos organizadores?",
+                a: "Nem sempre. Primeiro avaliamos o que você já tem em casa. Quando é necessário comprar, indicamos apenas o essencial, pensando no seu orçamento e na durabilidade das peças.",
+              },
+              {
+                q: "Você atende apenas em São Paulo capital?",
+                a: "A base é São Paulo, mas há possibilidade de atendimento em cidades da região mediante análise do projeto. No primeiro contato, já avaliamos a viabilidade logística.",
               },
             ].map((item, index) => (
               <div
                 key={index}
-                className="border border-[#7D7C60]/20 rounded-lg"
+                className="border border-[#7D7C60]/20 rounded-lg overflow-hidden"
               >
                 <button
                   type="button"
-                  className="w-full p-6 text-left flex justify-between items-center hover:bg-[#FDF7F2] transition-colors"
+                  className="w-full p-6 flex justify-between items-center bg-white hover:bg-[#FDF7F2] transition-colors text-left"
                   onClick={() => toggleFaq(index)}
                 >
-                  <h4 className="font-bold text-[#37332F] text-lg">
+                  <h4 className="font-semibold text-lg text-[#37332F]">
                     {item.q}
                   </h4>
                   <i
@@ -608,8 +603,8 @@ export default function PersonalOrganizerLanding() {
                 </button>
 
                 {openFaq === index && (
-                  <div className="px-6 pb-6">
-                    <p className="text-[#37332F] leading-relaxed">
+                  <div className="px-6 pb-6 bg-white">
+                    <p className="text-[#37332F] leading-relaxed text-sm">
                       {item.a}
                     </p>
                   </div>
@@ -625,14 +620,14 @@ export default function PersonalOrganizerLanding() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2
-              className="text-4xl font-bold text-[#37332F] mb-4"
+              className="text-3xl lg:text-4xl font-bold text-[#37332F] mb-4"
               style={{ fontFamily: "Playfair Display, serif" }}
             >
-              Entre em Contato
+              Vamos organizar sua casa?
             </h2>
             <p className="text-lg text-[#7D7C60] max-w-2xl mx-auto">
-              Pronta para transformar sua casa? Envie sua mensagem e vamos
-              conversar sobre o seu projeto.
+              Preencha o formulário abaixo ou, se preferir, clique para falar pelo
+              WhatsApp. Em até 24 horas úteis retornamos com os próximos passos.
             </p>
           </div>
 
@@ -672,7 +667,7 @@ export default function PersonalOrganizerLanding() {
 
                 <div>
                   <label className="block text-[#37332F] font-semibold mb-2">
-                    Telefone
+                    WhatsApp
                   </label>
                   <input
                     type="text"
@@ -706,7 +701,7 @@ export default function PersonalOrganizerLanding() {
                   type="submit"
                   className="w-full bg-[#37332F] text-white py-4 rounded-lg hover:bg-[#2a251f] transition-colors"
                 >
-                  Enviar Mensagem
+                  Enviar mensagem
                 </button>
               </form>
             </div>
@@ -715,9 +710,8 @@ export default function PersonalOrganizerLanding() {
             <div className="space-y-8">
               <div>
                 <h3 className="text-2xl font-bold text-[#37332F] mb-4">
-                  Outras Formas de Contato
+                  Outras formas de contato
                 </h3>
-
                 <div className="space-y-4">
                   <div className="flex items-center">
                     <div className="w-12 h-12 bg-[#7D7C60] rounded-full flex items-center justify-center mr-4">
@@ -725,8 +719,6 @@ export default function PersonalOrganizerLanding() {
                     </div>
                     <a
                       href="https://wa.me/5511947358000"
-                      target="_blank"
-                      rel="noopener noreferrer"
                       className="text-[#37332F] hover:text-[#7D7C60]"
                     >
                       (11) 94735-8000
@@ -748,7 +740,7 @@ export default function PersonalOrganizerLanding() {
               </div>
 
               <div className="bg-white p-6 rounded-lg shadow-lg">
-                <h4 className="font-bold text-[#37332F] mb-3">Horário</h4>
+                <h4 className="font-bold text-[#37332F] mb-3">Horário de atendimento</h4>
                 <p className="text-[#37332F]">
                   <strong>Seg a Sex:</strong> 8h–20h
                 </p>
@@ -775,44 +767,32 @@ export default function PersonalOrganizerLanding() {
               >
                 Raquel Martins
               </h3>
-              <p className="text-gray-300 leading-relaxed">
-                Transformando espaços, organizando vidas. Especialista em
-                soluções personalizadas de organização residencial.
+              <p className="text-gray-300 leading-relaxed text-sm">
+                Transformando espaços e organizando vidas com projetos
+                personalizados de organização residencial.
               </p>
             </div>
 
             <div>
-              <h4 className="font-bold mb-4">Links Rápidos</h4>
-              <ul className="space-y-2">
+              <h4 className="font-bold mb-4">Links rápidos</h4>
+              <ul className="space-y-2 text-sm">
                 <li>
-                  <a
-                    href="#servicos"
-                    className="text-gray-300 hover:text-white transition-colors"
-                  >
+                  <a href="#servicos" className="text-gray-300 hover:text-white">
                     Serviços
                   </a>
                 </li>
                 <li>
-                  <a
-                    href="#sobre"
-                    className="text-gray-300 hover:text-white transition-colors"
-                  >
+                  <a href="#sobre" className="text-gray-300 hover:text-white">
                     Sobre
                   </a>
                 </li>
                 <li>
-                  <a
-                    href="#portfolio"
-                    className="text-gray-300 hover:text-white transition-colors"
-                  >
+                  <a href="#portfolio" className="text-gray-300 hover:text-white">
                     Portfólio
                   </a>
                 </li>
                 <li>
-                  <a
-                    href="#contato"
-                    className="text-gray-300 hover:text-white transition-colors"
-                  >
+                  <a href="#contato" className="text-gray-300 hover:text-white">
                     Contato
                   </a>
                 </li>
@@ -820,26 +800,20 @@ export default function PersonalOrganizerLanding() {
             </div>
 
             <div>
-              <h4 className="font-bold mb-4">Redes Sociais</h4>
+              <h4 className="font-bold mb-4">Redes sociais</h4>
               <div className="flex space-x-4">
                 <a
                   href="https://www.instagram.com/raquelmartinsorganiza/"
-                  target="_blank"
-                  rel="noopener noreferrer"
                   className="w-10 h-10 bg-[#7D7C60] rounded-full flex items-center justify-center hover:bg-[#6a6850] transition-colors"
                 >
                   <i className="ri-instagram-line text-lg" />
                 </a>
-
                 <a
                   href="https://wa.me/5511947358000"
-                  target="_blank"
-                  rel="noopener noreferrer"
                   className="w-10 h-10 bg-[#7D7C60] rounded-full flex items-center justify-center hover:bg-[#6a6850] transition-colors"
                 >
                   <i className="ri-whatsapp-line text-lg" />
                 </a>
-
                 <a
                   href="mailto:contato@raquelmartinsorganiza.com.br"
                   className="w-10 h-10 bg-[#7D7C60] rounded-full flex items-center justify-center hover:bg-[#6a6850] transition-colors"
@@ -850,21 +824,19 @@ export default function PersonalOrganizerLanding() {
             </div>
           </div>
 
-          <div className="border-t border-gray-600 pt-8 flex flex-col md:flex-row justify-between items-center">
-            <p className="text-gray-300">
-              © {new Date().getFullYear()} Raquel Martins Organização. Todos os
-              direitos reservados.
-            </p>
+          <div className="border-t border-gray-600 pt-6 text-center text-sm text-gray-300">
+            © {new Date().getFullYear()} Raquel Martins Organização. Todos os
+            direitos reservados.
           </div>
         </div>
       </footer>
 
       {/* BOTÃO WHATSAPP FLUTUANTE */}
       <a
-        href="https://wa.me/5511947358000?text=Olá! Gostaria de saber mais sobre os serviços de organização residencial."
+        href="https://wa.me/5511947358000?text=Olá! Gostaria de saber mais sobre os serviços de Personal Organizer."
         target="_blank"
         rel="noopener noreferrer"
-        className="fixed bottom-6 right-6 z-50 w-16 h-16 bg-[#7D7C60] hover:bg-[#6a6850] rounded-full flex items-center justify-center shadow-lg transition-all duration-300 hover:scale-110"
+        className="fixed bottom-6 right-6 z-50 w-16 h-16 bg-[#7D7C60] hover:bg-[#6a6850] rounded-full flex items-center justify-center shadow-lg transition-transform duration-300 hover:scale-110"
         aria-label="Falar no WhatsApp"
       >
         <i className="ri-whatsapp-fill text-white text-4xl" />
