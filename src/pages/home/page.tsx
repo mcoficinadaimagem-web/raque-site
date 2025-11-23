@@ -185,7 +185,7 @@ export default function Home() {
           <div className="grid md:grid-cols-3 gap-8">
 
             <div className="bg-white rounded-lg overflow-hidden shadow-lg">
-              <img src="armario personal organizer.jpg" className="w-full h-64 object-cover" />
+              <img src="armario-personal-organizer.jpg" className="w-full h-64 object-cover" />
               <div className="p-6">
                 <h3 className="text-2xl font-bold">Armários</h3>
                 <p>Organização prática e funcional para closets e guarda-roupas.</p>
@@ -193,7 +193,7 @@ export default function Home() {
             </div>
 
             <div className="bg-white rounded-lg overflow-hidden shadow-lg">
-              <img src="cozinha personal organizer.jpg" className="w-full h-64 object-cover" />
+              <img src="cozinha-personal-organizer.jpg" className="w-full h-64 object-cover" />
               <div className="p-6">
                 <h3 className="text-2xl font-bold">Cozinhas</h3>
                 <p>Transforme sua cozinha em um espaço eficiente e organizado.</p>
@@ -201,7 +201,7 @@ export default function Home() {
             </div>
 
             <div className="bg-white rounded-lg overflow-hidden shadow-lg">
-              <img src="escritório personal organizer.jpg" className="w-full h-64 object-cover" />
+              <img src="escritório-personal-organizer.jpg" className="w-full h-64 object-cover" />
               <div className="p-6">
                 <h3 className="text-2xl font-bold">Escritórios</h3>
                 <p>Ambientes de trabalho organizados para máxima produtividade.</p>
@@ -346,15 +346,15 @@ export default function Home() {
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
 
             <div className="bg-white rounded-lg shadow-lg overflow-hidden">
-              <img src="closet antes.jpg" className="w-full h-64 object-cover" />
+              <img src="closet-antes.jpg" className="w-full h-64 object-cover" />
             </div>
 
             <div className="bg-white rounded-lg shadow-lg overflow-hidden">
-              <img src="despensa antes.jpg" className="w-full h-64 object-cover" />
+              <img src="despensa-antes.jpg" className="w-full h-64 object-cover" />
             </div>
 
             <div className="bg-white rounded-lg shadow-lg overflow-hidden">
-              <img src="escritorio antes.jpg" className="w-full h-64 object-cover" />
+              <img src="escritorio-antes.jpg" className="w-full h-64 object-cover" />
             </div>
 
           </div>
