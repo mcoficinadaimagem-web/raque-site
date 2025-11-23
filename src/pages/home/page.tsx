@@ -1,7 +1,8 @@
 "use client";
-import { useState } from "react";
 
-export default function Home() {
+import { useState, type FormEvent } from "react";
+
+export default function PersonalOrganizerLanding() {
   const [openFaq, setOpenFaq] = useState<number | null>(null);
   const [formData, setFormData] = useState({
     name: "",
@@ -10,10 +11,15 @@ export default function Home() {
     message: "",
   });
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
-    if (!formData.name || !formData.email || !formData.phone || !formData.message) {
+    if (
+      !formData.name ||
+      !formData.email ||
+      !formData.phone ||
+      !formData.message
+    ) {
       alert("Por favor, preencha todos os campos");
       return;
     }
@@ -42,7 +48,6 @@ export default function Home() {
 
   return (
     <div className="min-h-screen bg-white">
-
       {/* NAV */}
       <nav className="bg-white shadow-sm sticky top-0 z-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -56,16 +61,28 @@ export default function Home() {
 
             <div className="hidden md:block">
               <div className="ml-10 flex items-baseline space-x-8">
-                <a href="#servicos" className="text-[#37332F] hover:text-[#7D7C60]">
+                <a
+                  href="#servicos"
+                  className="text-[#37332F] hover:text-[#7D7C60] transition-colors"
+                >
                   Serviços
                 </a>
-                <a href="#sobre" className="text-[#37332F] hover:text-[#7D7C60]">
+                <a
+                  href="#sobre"
+                  className="text-[#37332F] hover:text-[#7D7C60] transition-colors"
+                >
                   Sobre
                 </a>
-                <a href="#portfolio" className="text-[#37332F] hover:text-[#7D7C60]">
+                <a
+                  href="#portfolio"
+                  className="text-[#37332F] hover:text-[#7D7C60] transition-colors"
+                >
                   Portfólio
                 </a>
-                <a href="#contato" className="text-[#37332F] hover:text-[#7D7C60]">
+                <a
+                  href="#contato"
+                  className="text-[#37332F] hover:text-[#7D7C60] transition-colors"
+                >
                   Contato
                 </a>
               </div>
@@ -82,12 +99,11 @@ export default function Home() {
             alt="Ambiente organizado"
             className="w-full h-full object-cover object-top opacity-20"
           />
-          <div className="absolute inset-0 bg-[#FDF7F2]/80"></div>
+          <div className="absolute inset-0 bg-[#FDF7F2]/80" />
         </div>
 
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
-
             {/* TEXTO PRINCIPAL */}
             <div>
               <h1
@@ -98,21 +114,21 @@ export default function Home() {
               </h1>
 
               <p className="text-xl text-[#37332F] mb-8">
-                Organize sua casa e transforme sua rotina com um sistema de organização
-                pensado especialmente para você.
+                Organize sua casa e transforme sua rotina com um sistema de
+                organização pensado especialmente para você.
               </p>
 
               <div className="flex flex-col sm:flex-row gap-4">
                 <a
                   href="#servicos"
-                  className="bg-[#37332F] text-white px-8 py-4 rounded-lg hover:bg-[#2a251f]"
+                  className="bg-[#37332F] text-white px-8 py-4 rounded-lg hover:bg-[#2a251f] transition-colors"
                 >
                   Ver Serviços
                 </a>
 
                 <a
                   href="#sobre"
-                  className="border-2 border-[#37332F] text-[#37332F] px-8 py-4 rounded-lg hover:bg-[#37332F] hover:text-white"
+                  className="border-2 border-[#37332F] text-[#37332F] px-8 py-4 rounded-lg hover:bg-[#37332F] hover:text-white transition-colors"
                 >
                   Saiba Mais
                 </a>
@@ -135,38 +151,55 @@ export default function Home() {
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-[#37332F]">Benefícios da Organização</h2>
+            <h2
+              className="text-4xl font-bold text-[#37332F] mb-4"
+              style={{ fontFamily: "Playfair Display, serif" }}
+            >
+              Benefícios da Organização
+            </h2>
             <p className="text-lg text-[#7D7C60] max-w-2xl mx-auto">
-              Descubra como a organização pode transformar sua rotina e bem-estar
+              Descubra como a organização pode transformar sua rotina e
+              bem-estar
             </p>
           </div>
 
           <div className="grid md:grid-cols-3 gap-8">
-
             <div className="text-center p-8 bg-[#FDF7F2] rounded-lg">
               <div className="w-16 h-16 mx-auto mb-6 bg-[#7D7C60] rounded-full flex items-center justify-center">
-                <i className="ri-time-line text-2xl text-white"></i>
+                <i className="ri-time-line text-2xl text-white" />
               </div>
-              <h3 className="text-2xl font-bold text-[#37332F] mb-4">Economia de Tempo</h3>
-              <p>Encontre tudo rapidamente com sistemas eficientes.</p>
+              <h3 className="text-2xl font-bold text-[#37332F] mb-4">
+                Economia de Tempo
+              </h3>
+              <p className="text-[#37332F]">
+                Encontre tudo rapidamente com sistemas eficientes que poupam
+                horas do seu dia.
+              </p>
             </div>
 
             <div className="text-center p-8 bg-[#FDF7F2] rounded-lg">
               <div className="w-16 h-16 mx-auto mb-6 bg-[#7D7C60] rounded-full flex items-center justify-center">
-                <i className="ri-settings-3-line text-2xl text-white"></i>
+                <i className="ri-settings-3-line text-2xl text-white" />
               </div>
-              <h3 className="text-2xl font-bold text-[#37332F] mb-4">Mais Funcionalidade</h3>
-              <p>Otimize cada espaço da sua casa com soluções inteligentes.</p>
+              <h3 className="text-2xl font-bold text-[#37332F] mb-4">
+                Mais Funcionalidade
+              </h3>
+              <p className="text-[#37332F]">
+                Otimize cada espaço da sua casa com soluções inteligentes.
+              </p>
             </div>
 
             <div className="text-center p-8 bg-[#FDF7F2] rounded-lg">
               <div className="w-16 h-16 mx-auto mb-6 bg-[#7D7C60] rounded-full flex items-center justify-center">
-                <i className="ri-heart-3-line text-2xl text-white"></i>
+                <i className="ri-heart-3-line text-2xl text-white" />
               </div>
-              <h3 className="text-2xl font-bold text-[#37332F] mb-4">Redução do Estresse</h3>
-              <p>Viva com mais tranquilidade em um ambiente harmonioso.</p>
+              <h3 className="text-2xl font-bold text-[#37332F] mb-4">
+                Redução do Estresse
+              </h3>
+              <p className="text-[#37332F]">
+                Viva com mais tranquilidade em um ambiente harmonioso.
+              </p>
             </div>
-
           </div>
         </div>
       </section>
@@ -174,40 +207,72 @@ export default function Home() {
       {/* SERVIÇOS */}
       <section id="servicos" className="py-20 bg-[#FDF7F2]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-[#37332F]">Nossos Serviços</h2>
+            <h2
+              className="text-4xl font-bold text-[#37332F] mb-4"
+              style={{ fontFamily: "Playfair Display, serif" }}
+            >
+              Nossos Serviços
+            </h2>
             <p className="text-lg text-[#7D7C60] max-w-2xl mx-auto">
               Soluções personalizadas para cada ambiente da sua casa
             </p>
           </div>
 
           <div className="grid md:grid-cols-3 gap-8">
-
+            {/* Serviço 1 */}
             <div className="bg-white rounded-lg overflow-hidden shadow-lg">
-              <img src="armario-personal-organizer.jpg" className="w-full h-64 object-cover" />
+              <img
+                src="/armario-personal-organizer.jpg"
+                alt="Organização de armários e closets"
+                className="w-full h-64 object-cover object-top"
+              />
               <div className="p-6">
-                <h3 className="text-2xl font-bold">Armários</h3>
-                <p>Organização prática e funcional para closets e guarda-roupas.</p>
+                <h3 className="text-2xl font-bold text-[#37332F] mb-3">
+                  Armários e Closets
+                </h3>
+                <p className="text-[#37332F]">
+                  Transforme seu guarda-roupa em um espaço funcional e inspirador
+                  com organização por categorias e cores.
+                </p>
               </div>
             </div>
 
+            {/* Serviço 2 */}
             <div className="bg-white rounded-lg overflow-hidden shadow-lg">
-              <img src="cozinha-personal-organizer.jpg" className="w-full h-64 object-cover" />
+              <img
+                src="/cozinha-personal-organizer.jpg"
+                alt="Organização de cozinhas"
+                className="w-full h-64 object-cover object-top"
+              />
               <div className="p-6">
-                <h3 className="text-2xl font-bold">Cozinhas</h3>
-                <p>Transforme sua cozinha em um espaço eficiente e organizado.</p>
+                <h3 className="text-2xl font-bold text-[#37332F] mb-3">
+                  Cozinhas e Despensas
+                </h3>
+                <p className="text-[#37332F]">
+                  Otimize sua cozinha com soluções práticas que facilitam o
+                  preparo dos alimentos e o dia a dia.
+                </p>
               </div>
             </div>
 
+            {/* Serviço 3 */}
             <div className="bg-white rounded-lg overflow-hidden shadow-lg">
-              <img src="escritório-personal-organizer.jpg" className="w-full h-64 object-cover" />
+              <img
+                src="/escritorio-personal-organizer.jpg"
+                alt="Organização de escritórios"
+                className="w-full h-64 object-cover object-top"
+              />
               <div className="p-6">
-                <h3 className="text-2xl font-bold">Escritórios</h3>
-                <p>Ambientes de trabalho organizados para máxima produtividade.</p>
+                <h3 className="text-2xl font-bold text-[#37332F] mb-3">
+                  Escritórios e Home Offices
+                </h3>
+                <p className="text-[#37332F]">
+                  Crie um ambiente de trabalho organizado, produtivo e agradável
+                  para o seu dia a dia.
+                </p>
               </div>
             </div>
-
           </div>
         </div>
       </section>
@@ -215,9 +280,7 @@ export default function Home() {
       {/* SOBRE */}
       <section id="sobre" className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-
           <div className="grid lg:grid-cols-2 gap-12 items-center">
-
             <div>
               <img
                 src="/raquel-martins.jpeg"
@@ -227,16 +290,29 @@ export default function Home() {
             </div>
 
             <div>
-              <h2 className="text-4xl font-bold text-[#37332F] mb-6">Sobre a Raquel</h2>
+              <h2
+                className="text-4xl font-bold text-[#37332F] mb-6"
+                style={{ fontFamily: "Playfair Display, serif" }}
+              >
+                Sobre a Raquel
+              </h2>
 
-              <p className="text-lg text-[#37332F] mb-6">
-                Com mais de 8 anos de experiência, Raquel Martins transforma ambientes com
-                metodologias modernas de organização.
+              <p className="text-lg text-[#37332F] mb-6 leading-relaxed">
+                Com mais de 8 anos de experiência em organização residencial,
+                Raquel Martins é especialista em transformar espaços caóticos em
+                ambientes funcionais e harmoniosos.
               </p>
 
-              <p className="text-lg text-[#37332F] mb-8">
-                Sua missão é ajudar pessoas a viverem com mais leveza e funcionalidade,
-                criando espaços que realmente funcionam.
+              <p className="text-lg text-[#37332F] mb-6 leading-relaxed">
+                Formada em Design de Interiores e certificada em Personal
+                Organizing, ela desenvolveu uma metodologia que une praticidade,
+                estética e respeito ao estilo de vida de cada cliente.
+              </p>
+
+              <p className="text-lg text-[#37332F] mb-8 leading-relaxed">
+                Sua missão é ajudar pessoas a viverem com mais leveza e
+                bem-estar, criando sistemas personalizados que realmente
+                funcionam no dia a dia.
               </p>
 
               <div className="flex items-center space-x-6">
@@ -244,19 +320,18 @@ export default function Home() {
                   <div className="text-3xl font-bold text-[#7D7C60]">200+</div>
                   <div className="text-[#37332F]">Projetos</div>
                 </div>
-
                 <div className="text-center">
                   <div className="text-3xl font-bold text-[#7D7C60]">8</div>
-                  <div className="text-[#37332F]">Anos</div>
+                  <div className="text-[#37332F]">Anos de Experiência</div>
                 </div>
-
                 <div className="text-center">
-                  <div className="text-3xl font-bold text-[#7D7C60]">100%</div>
+                  <div className="text-3xl font-bold text-[#7D7C60]">
+                    100%
+                  </div>
                   <div className="text-[#37332F]">Satisfação</div>
                 </div>
               </div>
             </div>
-
           </div>
         </div>
       </section>
@@ -264,308 +339,536 @@ export default function Home() {
       {/* DEPOIMENTOS */}
       <section className="py-20 bg-[#FDF7F2]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-[#37332F]">O Que Dizem Nossos Clientes</h2>
-            <p className="text-lg text-[#7D7C60]">Depoimentos reais de clientes</p>
+            <h2
+              className="text-4xl font-bold text-[#37332F] mb-4"
+              style={{ fontFamily: "Playfair Display, serif" }}
+            >
+              O Que Dizem Nossos Clientes
+            </h2>
+            <p className="text-lg text-[#7D7C60] max-w-2xl mx-auto">
+              Depoimentos reais de quem transformou a casa com nossos serviços
+            </p>
           </div>
 
           <div className="grid md:grid-cols-3 gap-8">
-
+            {/* Depoimento 1 */}
             <div className="bg-white p-6 rounded-lg shadow-lg">
-              <p className="italic">
-                "A organização da Raquel mudou completamente meu dia a dia!"
+              <div className="flex items-center mb-4">
+                <img
+                  src="/maria-silva.jpg"
+                  alt="Maria Silva"
+                  className="w-16 h-16 rounded-full object-cover mr-4"
+                />
+                <div>
+                  <h4 className="font-bold text-[#37332F]">Maria Silva</h4>
+                  <p className="text-[#7D7C60] text-sm">Executiva</p>
+                </div>
+              </div>
+              <p className="text-[#37332F] italic leading-relaxed">
+                "A organização da Raquel mudou completamente minha rotina. Hoje
+                encontro tudo com facilidade e tenho mais tempo para a família."
               </p>
-              <p className="text-[#7D7C60] mt-4">— Maria</p>
             </div>
 
+            {/* Depoimento 2 */}
             <div className="bg-white p-6 rounded-lg shadow-lg">
-              <p className="italic">
-                "Profissional excelente! Minha casa nunca esteve tão funcional."
+              <div className="flex items-center mb-4">
+                <img
+                  src="/ana-costa.jpg"
+                  alt="Ana Costa"
+                  className="w-16 h-16 rounded-full object-cover mr-4"
+                />
+                <div>
+                  <h4 className="font-bold text-[#37332F]">Ana Costa</h4>
+                  <p className="text-[#7D7C60] text-sm">Empresária</p>
+                </div>
+              </div>
+              <p className="text-[#37332F] italic leading-relaxed">
+                "Mais do que deixar tudo arrumado, ela criou um sistema que
+                funciona no meu dia a dia corrido. Valeu cada minuto."
               </p>
-              <p className="text-[#7D7C60] mt-4">— Ana</p>
             </div>
 
+            {/* Depoimento 3 */}
             <div className="bg-white p-6 rounded-lg shadow-lg">
-              <p className="italic">
-                "Recomendo demais! Resultado impecável."
+              <div className="flex items-center mb-4">
+                <img
+                  src="/carla-mendes.jpg"
+                  alt="Carla Mendes"
+                  className="w-16 h-16 rounded-full object-cover mr-4"
+                />
+                <div>
+                  <h4 className="font-bold text-[#37332F]">Carla Mendes</h4>
+                  <p className="text-[#7D7C60] text-sm">Professora</p>
+                </div>
+              </div>
+              <p className="text-[#37332F] italic leading-relaxed">
+                "Profissional cuidadosa, organizada e muito atenciosa. Minha
+                casa nunca esteve tão bonita e funcional."
               </p>
-              <p className="text-[#7D7C60] mt-4">— Carla</p>
             </div>
-
           </div>
         </div>
       </section>
 
       {/* COMO FUNCIONA */}
       <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-[#37332F]">Como Funciona</h2>
-            <p className="text-lg text-[#7D7C60]">Processo simples e eficiente</p>
+            <h2
+              className="text-4xl font-bold text-[#37332F] mb-4"
+              style={{ fontFamily: "Playfair Display, serif" }}
+            >
+              Como Funciona
+            </h2>
+            <p className="text-lg text-[#7D7C60] max-w-2xl mx-auto">
+              Um processo simples e eficiente para organizar seus espaços
+            </p>
           </div>
 
           <div className="grid md:grid-cols-3 gap-8">
-
             <div className="text-center">
               <div className="w-20 h-20 mx-auto mb-6 bg-[#7D7C60] rounded-full flex items-center justify-center">
-                <span className="text-3xl text-white font-bold">1</span>
+                <span className="text-3xl font-bold text-white">1</span>
               </div>
-              <h3 className="text-2xl font-bold">Contato</h3>
-              <p className="text-[#37332F]">Agende sua avaliação inicial.</p>
+              <h3 className="text-2xl font-bold text-[#37332F] mb-4">Contato</h3>
+              <p className="text-[#37332F] leading-relaxed">
+                Você entra em contato pelo formulário ou WhatsApp e agenda uma
+                conversa inicial.
+              </p>
             </div>
 
             <div className="text-center">
               <div className="w-20 h-20 mx-auto mb-6 bg-[#7D7C60] rounded-full flex items-center justify-center">
-                <span className="text-3xl text-white font-bold">2</span>
+                <span className="text-3xl font-bold text-white">2</span>
               </div>
-              <h3 className="text-2xl font-bold">Visita Técnica</h3>
-              <p>Avaliação do espaço e levantamento das necessidades.</p>
+              <h3 className="text-2xl font-bold text-[#37332F] mb-4">
+                Visita Técnica
+              </h3>
+              <p className="text-[#37332F] leading-relaxed">
+                Avaliamos os ambientes, entendemos suas necessidades e definimos
+                o melhor plano para o seu espaço.
+              </p>
             </div>
 
             <div className="text-center">
               <div className="w-20 h-20 mx-auto mb-6 bg-[#7D7C60] rounded-full flex items-center justify-center">
-                <span className="text-3xl text-white font-bold">3</span>
+                <span className="text-3xl font-bold text-white">3</span>
               </div>
-              <h3 className="text-2xl font-bold">Organização</h3>
-              <p>Soluções sob medida para sua rotina.</p>
+              <h3 className="text-2xl font-bold text-[#37332F] mb-4">
+                Organização Personalizada
+              </h3>
+              <p className="text-[#37332F] leading-relaxed">
+                Execução completa do projeto com sistemas sob medida para sua
+                rotina e seu estilo de vida.
+              </p>
             </div>
-
           </div>
         </div>
       </section>
 
       {/* PORTFÓLIO */}
       <section id="portfolio" className="py-20 bg-[#FDF7F2]">
-        <div className="max-w-7xl mx-auto px-4">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-[#37332F]">Portfólio</h2>
-            <p className="text-lg text-[#7D7C60]">Antes e depois reais</p>
+            <h2
+              className="text-4xl font-bold text-[#37332F] mb-4"
+              style={{ fontFamily: "Playfair Display, serif" }}
+            >
+              Antes e Depois
+            </h2>
+            <p className="text-lg text-[#7D7C60] max-w-2xl mx-auto">
+              Transformações reais em closets, despensas e escritórios
+            </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-
-            <div className="bg-white rounded-lg shadow-lg overflow-hidden">
-              <img src="closet-antes.jpg" className="w-full h-64 object-cover" />
+          <div className="grid md:grid-cols-3 gap-8">
+            {/* Closet */}
+            <div className="bg-white rounded-lg overflow-hidden shadow-lg">
+              <div className="grid grid-cols-2 h-64">
+                <img
+                  src="/closet-antes.jpg"
+                  alt="Closet antes da organização"
+                  className="w-full h-full object-cover"
+                />
+                <img
+                  src="/closet-depois.jpg"
+                  alt="Closet depois da organização"
+                  className="w-full h-full object-cover"
+                />
+              </div>
+              <div className="p-4">
+                <h4 className="font-bold text-[#37332F] mb-2">
+                  Closet Residencial
+                </h4>
+                <p className="text-sm text-[#7D7C60]">
+                  Organização por categoria, cores e frequência de uso.
+                </p>
+              </div>
             </div>
 
-            <div className="bg-white rounded-lg shadow-lg overflow-hidden">
-              <img src="despensa-antes.jpg" className="w-full h-64 object-cover" />
+            {/* Despensa */}
+            <div className="bg-white rounded-lg overflow-hidden shadow-lg">
+              <div className="grid grid-cols-2 h-64">
+                <img
+                  src="/despensa-antes.jpg"
+                  alt="Despensa antes da organização"
+                  className="w-full h-full object-cover"
+                />
+                <img
+                  src="/despensa-depois.jpg"
+                  alt="Despensa depois da organização"
+                  className="w-full h-full object-cover"
+                />
+              </div>
+              <div className="p-4">
+                <h4 className="font-bold text-[#37332F] mb-2">
+                  Despensa Gourmet
+                </h4>
+                <p className="text-sm text-[#7D7C60]">
+                  Setorização inteligente para facilitar o dia a dia na cozinha.
+                </p>
+              </div>
             </div>
 
-            <div className="bg-white rounded-lg shadow-lg overflow-hidden">
-              <img src="escritorio-antes.jpg" className="w-full h-64 object-cover" />
+            {/* Escritório */}
+            <div className="bg-white rounded-lg overflow-hidden shadow-lg">
+              <div className="grid grid-cols-2 h-64">
+                <img
+                  src="/escritorio-antes.jpg"
+                  alt="Escritório antes da organização"
+                  className="w-full h-full object-cover"
+                />
+                <img
+                  src="/escritorio-depois.jpg"
+                  alt="Escritório depois da organização"
+                  className="w-full h-full object-cover"
+                />
+              </div>
+              <div className="p-4">
+                <h4 className="font-bold text-[#37332F] mb-2">Home Office</h4>
+                <p className="text-sm text-[#7D7C60]">
+                  Espaço de trabalho funcional, limpo e produtivo.
+                </p>
+              </div>
             </div>
-
           </div>
         </div>
       </section>
 
       {/* FAQ */}
       <section className="py-20 bg-white">
-        <div className="max-w-4xl mx-auto px-4">
-
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-[#37332F]">Dúvidas Frequentes</h2>
+            <h2
+              className="text-4xl font-bold text-[#37332F] mb-4"
+              style={{ fontFamily: "Playfair Display, serif" }}
+            >
+              Dúvidas Frequentes
+            </h2>
             <p className="text-lg text-[#7D7C60]">
-              Tire suas principais dúvidas sobre nossos serviços
+              Tire suas principais dúvidas sobre os serviços de personal
+              organizer
             </p>
           </div>
 
           <div className="space-y-4">
-
-            {/* PERGUNTA */}
-            {[ 
-              { q: "Organizar é caro?", a: "A organização retorna em economia de tempo e produtividade."},
-              { q: "Preciso comprar caixas organizadoras?", a: "Nem sempre; aproveitamos o que você já possui."},
-              { q: "Quanto tempo leva a organização?", a: "Depende do espaço; um closet leva 4 a 8 horas."}
+            {[
+              {
+                q: "Organizar é caro?",
+                a: "A organização é um investimento que retorna em economia de tempo, produtividade e redução de compras desnecessárias.",
+              },
+              {
+                q: "Preciso comprar caixas organizadoras?",
+                a: "Nem sempre. Primeiro avaliamos o que você já possui e só então indicamos produtos, sempre com foco em custo-benefício.",
+              },
+              {
+                q: "Quanto tempo leva a organização?",
+                a: "Depende do tamanho e da complexidade do ambiente. Um closet leva de 4 a 8 horas; uma casa inteira pode levar alguns dias.",
+              },
             ].map((item, index) => (
-              <div key={index} className="border border-[#7D7C60]/20 rounded-lg">
+              <div
+                key={index}
+                className="border border-[#7D7C60]/20 rounded-lg"
+              >
                 <button
-                  className="w-full p-6 flex justify-between items-center hover:bg-[#FDF7F2]"
+                  type="button"
+                  className="w-full p-6 text-left flex justify-between items-center hover:bg-[#FDF7F2] transition-colors"
                   onClick={() => toggleFaq(index)}
                 >
-                  <h4 className="font-bold text-lg text-[#37332F]">{item.q}</h4>
-                  <i className={`ri-arrow-${openFaq === index ? "up" : "down"}-s-line text-[#7D7C60]`}></i>
+                  <h4 className="font-bold text-[#37332F] text-lg">
+                    {item.q}
+                  </h4>
+                  <i
+                    className={`ri-arrow-${
+                      openFaq === index ? "up" : "down"
+                    }-s-line text-[#7D7C60] text-xl`}
+                  />
                 </button>
 
                 {openFaq === index && (
                   <div className="px-6 pb-6">
-                    <p className="text-[#37332F]">{item.a}</p>
+                    <p className="text-[#37332F] leading-relaxed">
+                      {item.a}
+                    </p>
                   </div>
                 )}
               </div>
             ))}
-
           </div>
         </div>
       </section>
 
       {/* CONTATO */}
       <section id="contato" className="py-20 bg-[#FDF7F2]">
-        <div className="max-w-7xl mx-auto px-4">
-
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-[#37332F]">Entre em Contato</h2>
-            <p className="text-lg text-[#7D7C60]">Pronta para transformar sua casa?</p>
+            <h2
+              className="text-4xl font-bold text-[#37332F] mb-4"
+              style={{ fontFamily: "Playfair Display, serif" }}
+            >
+              Entre em Contato
+            </h2>
+            <p className="text-lg text-[#7D7C60] max-w-2xl mx-auto">
+              Pronta para transformar sua casa? Envie sua mensagem e vamos
+              conversar sobre o seu projeto.
+            </p>
           </div>
 
           <div className="grid lg:grid-cols-2 gap-12">
-
-            {/* FORM */}
+            {/* Formulário */}
             <div>
               <form onSubmit={handleSubmit} className="space-y-6">
-
                 <div>
-                  <label className="font-semibold">Nome</label>
+                  <label className="block text-[#37332F] font-semibold mb-2">
+                    Nome
+                  </label>
                   <input
                     type="text"
                     value={formData.name}
-                    onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                    className="w-full px-4 py-3 border rounded-lg"
+                    onChange={(e) =>
+                      setFormData({ ...formData, name: e.target.value })
+                    }
+                    className="w-full px-4 py-3 border border-[#7D7C60]/30 rounded-lg"
+                    required
                   />
                 </div>
 
                 <div>
-                  <label className="font-semibold">E-mail</label>
+                  <label className="block text-[#37332F] font-semibold mb-2">
+                    E-mail
+                  </label>
                   <input
                     type="email"
                     value={formData.email}
-                    onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                    className="w-full px-4 py-3 border rounded-lg"
+                    onChange={(e) =>
+                      setFormData({ ...formData, email: e.target.value })
+                    }
+                    className="w-full px-4 py-3 border border-[#7D7C60]/30 rounded-lg"
+                    required
                   />
                 </div>
 
                 <div>
-                  <label className="font-semibold">Telefone</label>
+                  <label className="block text-[#37332F] font-semibold mb-2">
+                    Telefone
+                  </label>
                   <input
+                    type="text"
+                    placeholder="(11) 99999-9999"
                     value={formData.phone}
-                    onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                    className="w-full px-4 py-3 border rounded-lg"
+                    onChange={(e) =>
+                      setFormData({ ...formData, phone: e.target.value })
+                    }
+                    className="w-full px-4 py-3 border border-[#7D7C60]/30 rounded-lg"
+                    required
                   />
                 </div>
 
                 <div>
-                  <label className="font-semibold">Mensagem</label>
+                  <label className="block text-[#37332F] font-semibold mb-2">
+                    Mensagem
+                  </label>
                   <textarea
                     rows={5}
+                    maxLength={500}
                     value={formData.message}
-                    onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                    className="w-full px-4 py-3 border rounded-lg"
-                  ></textarea>
+                    onChange={(e) =>
+                      setFormData({ ...formData, message: e.target.value })
+                    }
+                    className="w-full px-4 py-3 border border-[#7D7C60]/30 rounded-lg resize-none"
+                    required
+                  />
                 </div>
 
                 <button
                   type="submit"
-                  className="w-full bg-[#37332F] text-white py-4 rounded-lg hover:bg-[#2a251f]"
+                  className="w-full bg-[#37332F] text-white py-4 rounded-lg hover:bg-[#2a251f] transition-colors"
                 >
                   Enviar Mensagem
                 </button>
-
               </form>
             </div>
 
-            {/* CONTATO LATERAL */}
+            {/* Contato lateral */}
             <div className="space-y-8">
-
               <div>
-                <h3 className="text-2xl font-bold text-[#37332F]">Outras Formas</h3>
+                <h3 className="text-2xl font-bold text-[#37332F] mb-4">
+                  Outras Formas de Contato
+                </h3>
 
-                <div className="space-y-4 mt-4">
-
+                <div className="space-y-4">
                   <div className="flex items-center">
                     <div className="w-12 h-12 bg-[#7D7C60] rounded-full flex items-center justify-center mr-4">
-                      <i className="ri-whatsapp-line text-white"></i>
+                      <i className="ri-whatsapp-line text-white text-xl" />
                     </div>
-                    <a href="https://wa.me/5511947358000">(11) 94735-8000</a>
-                  </div>
-
-                  <div className="flex items-center">
-                    <div className="w-12 h-12 bg-[#7D7C60] rounded-full flex items-center justify-center mr-4">
-                      <i className="ri-mail-line text-white"></i>
-                    </div>
-                    <a href="mailto:contato@raquelmartinsorganiza.com.br">
-                      contato@raquelmartinsorganiza.com.br
+                    <a
+                      href="https://wa.me/5511947358000"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-[#37332F] hover:text-[#7D7C60]"
+                    >
+                      (11) 94735-8000
                     </a>
                   </div>
 
+                  <div className="flex items-center">
+                    <div className="w-12 h-12 bg-[#7D7C60] rounded-full flex items-center justify-center mr-4">
+                      <i className="ri-mail-line text-white text-xl" />
+                    </div>
+                    <a
+                      href="mailto:contato@raquelmartinsorganiza.com.br"
+                      className="text-[#37332F] hover:text-[#7D7C60]"
+                    >
+                      contato@raquelmartinsorganiza.com.br
+                    </a>
+                  </div>
                 </div>
               </div>
 
               <div className="bg-white p-6 rounded-lg shadow-lg">
-                <h4 className="font-bold text-[#37332F]">Horário</h4>
-                <p>Seg–Sex: 8h–20h</p>
-                <p>Sábado: 8h–18h</p>
-                <p>Domingo: Fechado</p>
+                <h4 className="font-bold text-[#37332F] mb-3">Horário</h4>
+                <p className="text-[#37332F]">
+                  <strong>Seg a Sex:</strong> 8h–20h
+                </p>
+                <p className="text-[#37332F]">
+                  <strong>Sábado:</strong> 8h–18h
+                </p>
+                <p className="text-[#37332F]">
+                  <strong>Domingo:</strong> Fechado
+                </p>
               </div>
-
             </div>
-
           </div>
         </div>
       </section>
 
       {/* RODAPÉ */}
       <footer className="bg-[#37332F] text-white py-12">
-        <div className="max-w-7xl mx-auto px-4">
-
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid md:grid-cols-3 gap-8 mb-8">
-
             <div>
-              <h3 className="text-2xl font-bold">Raquel Martins</h3>
-              <p className="text-gray-300 mt-4">
-                Transformando espaços, organizando vidas.
+              <h3
+                className="text-2xl font-bold mb-4"
+                style={{ fontFamily: "Playfair Display, serif" }}
+              >
+                Raquel Martins
+              </h3>
+              <p className="text-gray-300 leading-relaxed">
+                Transformando espaços, organizando vidas. Especialista em
+                soluções personalizadas de organização residencial.
               </p>
             </div>
 
             <div>
-              <h4 className="font-bold">Links</h4>
-              <ul className="space-y-2 mt-4">
-                <li><a href="#servicos">Serviços</a></li>
-                <li><a href="#sobre">Sobre</a></li>
-                <li><a href="#portfolio">Portfólio</a></li>
-                <li><a href="#contato">Contato</a></li>
+              <h4 className="font-bold mb-4">Links Rápidos</h4>
+              <ul className="space-y-2">
+                <li>
+                  <a
+                    href="#servicos"
+                    className="text-gray-300 hover:text-white transition-colors"
+                  >
+                    Serviços
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="#sobre"
+                    className="text-gray-300 hover:text-white transition-colors"
+                  >
+                    Sobre
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="#portfolio"
+                    className="text-gray-300 hover:text-white transition-colors"
+                  >
+                    Portfólio
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="#contato"
+                    className="text-gray-300 hover:text-white transition-colors"
+                  >
+                    Contato
+                  </a>
+                </li>
               </ul>
             </div>
 
             <div>
-              <h4 className="font-bold">Redes</h4>
-              <div className="flex space-x-4 mt-4">
-
+              <h4 className="font-bold mb-4">Redes Sociais</h4>
+              <div className="flex space-x-4">
                 <a
                   href="https://www.instagram.com/raquelmartinsorganiza/"
-                  className="w-10 h-10 bg-[#7D7C60] flex items-center justify-center rounded-full"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-10 h-10 bg-[#7D7C60] rounded-full flex items-center justify-center hover:bg-[#6a6850] transition-colors"
                 >
-                  <i className="ri-instagram-line text-lg"></i>
+                  <i className="ri-instagram-line text-lg" />
                 </a>
 
                 <a
                   href="https://wa.me/5511947358000"
-                  className="w-10 h-10 bg-[#7D7C60] flex items-center justify-center rounded-full"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-10 h-10 bg-[#7D7C60] rounded-full flex items-center justify-center hover:bg-[#6a6850] transition-colors"
                 >
-                  <i className="ri-whatsapp-line text-lg"></i>
+                  <i className="ri-whatsapp-line text-lg" />
                 </a>
 
+                <a
+                  href="mailto:contato@raquelmartinsorganiza.com.br"
+                  className="w-10 h-10 bg-[#7D7C60] rounded-full flex items-center justify-center hover:bg-[#6a6850] transition-colors"
+                >
+                  <i className="ri-mail-line text-lg" />
+                </a>
               </div>
             </div>
-
           </div>
 
-          <div className="border-t border-gray-600 pt-8 text-center">
-            © {new Date().getFullYear()} Raquel Martins Organização
+          <div className="border-t border-gray-600 pt-8 flex flex-col md:flex-row justify-between items-center">
+            <p className="text-gray-300">
+              © {new Date().getFullYear()} Raquel Martins Organização. Todos os
+              direitos reservados.
+            </p>
           </div>
-
         </div>
       </footer>
 
-      {/* BOTÃO WHATSAPP */}
+      {/* BOTÃO WHATSAPP FLUTUANTE */}
       <a
-        href="https://wa.me/5511947358000?text=Olá! Gostaria de saber mais sobre organização residencial."
-        className="fixed bottom-6 right-6 w-16 h-16 bg-[#7D7C60] rounded-full flex items-center justify-center shadow-lg hover:scale-110 transition"
+        href="https://wa.me/5511947358000?text=Olá! Gostaria de saber mais sobre os serviços de organização residencial."
+        target="_blank"
+        rel="noopener noreferrer"
+        className="fixed bottom-6 right-6 z-50 w-16 h-16 bg-[#7D7C60] hover:bg-[#6a6850] rounded-full flex items-center justify-center shadow-lg transition-all duration-300 hover:scale-110"
+        aria-label="Falar no WhatsApp"
       >
-        <i className="ri-whatsapp-fill text-white text-4xl"></i>
+        <i className="ri-whatsapp-fill text-white text-4xl" />
       </a>
-
     </div>
   );
 }
