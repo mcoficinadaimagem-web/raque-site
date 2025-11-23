@@ -95,7 +95,7 @@ export default function PersonalOrganizerLanding() {
       <section className="relative bg-[#FDF7F2] py-16 lg:py-24">
         <div className="absolute inset-0">
           <img
-            src="/raquel-martins.jpeg"
+            src="public/img/raquel-martins.jpeg"
             alt="Ambiente organizado"
             className="w-full h-full object-cover object-top opacity-20"
           />
