@@ -52,44 +52,45 @@ export default function PersonalOrganizerLanding() {
       <nav className="bg-white shadow-sm sticky top-0 z-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
-            <h1
-              className="text-2xl font-bold text-[#37332F]"
-              style={{ fontFamily: "Playfair Display, serif" }}
-            >
-              Raquel Martins
-            </h1>
+            <a
+  href="/"
+  className="text-2xl font-bold text-[#37332F]"
+  style={{ fontFamily: "Playfair Display, serif" }}
+>
+  Raquel Martins
+</a>
 
-            <div className="hidden md:block">
-              <div className="ml-10 flex items-baseline space-x-8">
-                <a
-                  href="#servicos"
-                  className="text-[#37332F] hover:text-[#7D7C60] transition-colors"
-                >
-                  Serviços
-                </a>
-                <a
-                  href="#sobre"
-                  className="text-[#37332F] hover:text-[#7D7C60] transition-colors"
-                >
-                  Sobre
-                </a>
-                <a
-                  href="#portfolio"
-                  className="text-[#37332F] hover:text-[#7D7C60] transition-colors"
-                >
-                  Portfólio
-                </a>
-                <a
-                  href="#contato"
-                  className="text-[#37332F] hover:text-[#7D7C60] transition-colors"
-                >
-                  Contato
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </nav>
+<div className="hidden md:block">
+  <div className="ml-10 flex items-baseline space-x-8">
+    <a
+      href="#servicos"
+      className="text-[#37332F] hover:text-[#7D7C60] transition-colors"
+    >
+      Serviços
+    </a>
+    <a
+      href="#sobre"
+      className="text-[#37332F] hover:text-[#7D7C60] transition-colors"
+    >
+      Sobre
+    </a>
+    <a
+      href="#portfolio"
+      className="text-[#37332F] hover:text-[#7D7C60] transition-colors"
+    >
+      Portfólio
+    </a>
+    <a
+      href="#contato"
+      className="text-[#37332F] hover:text-[#7D7C60] transition-colors"
+    >
+      Contato
+    </a>
+  </div>
+</div>
+</div>
+</div>
+</nav>
 
       {/* HERO */}
       <section className="relative bg-[#FDF7F2] py-16 lg:py-24">
