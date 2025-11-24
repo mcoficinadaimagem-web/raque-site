@@ -162,8 +162,8 @@ export default function PersonalOrganizerSP() {
             {/* Closet */}
             <div className="bg-white rounded-lg overflow-hidden shadow-lg">
               <div className="grid grid-cols-2 h-64">
-                <img src="/img/antes-closet.jpg" className="object-cover h-full" />
-                <img src="/img/depois-closet.jpg" className="object-cover h-full" />
+                <img src="/img/closet-antes.jpg" className="object-cover h-full" />
+                <img src="/img/closet-depois.jpg" className="object-cover h-full" />
               </div>
               <div className="p-4">
                 <h4 className="font-bold">Closet</h4>
@@ -174,8 +174,8 @@ export default function PersonalOrganizerSP() {
             {/* Despensa */}
             <div className="bg-white rounded-lg overflow-hidden shadow-lg">
               <div className="grid grid-cols-2 h-64">
-                <img src="/img/antes-despensa.jpg" className="object-cover h-full" />
-                <img src="/img/depois-despensa.jpg" className="object-cover h-full" />
+                <img src="/img/despensa-antes.jpg" className="object-cover h-full" />
+                <img src="/img/despensa-depois.jpg" className="object-cover h-full" />
               </div>
               <div className="p-4">
                 <h4 className="font-bold">Despensa</h4>
@@ -186,8 +186,8 @@ export default function PersonalOrganizerSP() {
             {/* Escritório */}
             <div className="bg-white rounded-lg overflow-hidden shadow-lg">
               <div className="grid grid-cols-2 h-64">
-                <img src="/img/antes-escritorio.jpg" className="object-cover h-full" />
-                <img src="/img/depois-escritorio.jpg" className="object-cover h-full" />
+                <img src="/img/escritorio-antes.jpg" className="object-cover h-full" />
+                <img src="/img/escritorio-depois.jpg" className="object-cover h-full" />
               </div>
               <div className="p-4">
                 <h4 className="font-bold">Home Office</h4>
