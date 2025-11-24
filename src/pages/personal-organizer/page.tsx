@@ -78,7 +78,7 @@ export default function PersonalOrganizerLanding() {
       <section className="relative bg-[#FDF7F2] py-16 lg:py-24 overflow-hidden">
         <div className="absolute inset-0">
           <img
-            src="/raquel-martins.jpeg"
+            src="/img/raquel-martins.jpeg"
             alt="Ambiente organizado"
             className="w-full h-full object-cover object-top opacity-20"
           />
@@ -131,7 +131,7 @@ export default function PersonalOrganizerLanding() {
             {/* Foto */}
             <div className="lg:text-right">
               <img
-                src="/raquel-martins.jpeg"
+                src="/img/raquel-martins.jpeg"
                 alt="Raquel Martins - Personal Organizer"
                 className="w-full max-w-sm mx-auto lg:ml-auto rounded-lg shadow-lg"
               />
@@ -218,7 +218,7 @@ export default function PersonalOrganizerLanding() {
             {/* Serviço 1 */}
             <div className="bg-white rounded-lg overflow-hidden shadow-lg">
               <img
-                src="/armario-personal-organizer.jpg"
+                src="/img/armario-personal-organizer.jpg"
                 alt="Organização de armários e closets"
                 className="w-full h-64 object-cover object-top"
               />
@@ -236,7 +236,7 @@ export default function PersonalOrganizerLanding() {
             {/* Serviço 2 */}
             <div className="bg-white rounded-lg overflow-hidden shadow-lg">
               <img
-                src="/cozinha-personal-organizer.jpg"
+                src="/img/cozinha-personal-organizer.jpg"
                 alt="Organização de cozinhas e despensas"
                 className="w-full h-64 object-cover object-top"
               />
@@ -254,7 +254,7 @@ export default function PersonalOrganizerLanding() {
             {/* Serviço 3 */}
             <div className="bg-white rounded-lg overflow-hidden shadow-lg">
               <img
-                src="/escritorio-personal-organizer.jpg"
+                src="/img/escritorio-personal-organizer.jpg"
                 alt="Organização de escritórios e home office"
                 className="w-full h-64 object-cover object-top"
               />
@@ -278,7 +278,7 @@ export default function PersonalOrganizerLanding() {
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
               <img
-                src="/raquel-martins.jpeg"
+                src="/img/raquel-martins.jpeg"
                 alt="Raquel Martins"
                 className="w-full max-w-sm mx-auto rounded-lg shadow-lg"
               />
@@ -348,12 +348,12 @@ export default function PersonalOrganizerLanding() {
             <div className="bg-white rounded-lg overflow-hidden shadow-lg">
               <div className="grid grid-cols-2 h-56">
                 <img
-                  src="/closet-antes.jpg"
+                  src="/img/closet-antes.jpg"
                   alt="Closet antes da organização"
                   className="w-full h-full object-cover"
                 />
                 <img
-                  src="/closet-depois.jpg"
+                  src="/img/closet-depois.jpg"
                   alt="Closet depois da organização"
                   className="w-full h-full object-cover"
                 />
@@ -370,12 +370,12 @@ export default function PersonalOrganizerLanding() {
             <div className="bg-white rounded-lg overflow-hidden shadow-lg">
               <div className="grid grid-cols-2 h-56">
                 <img
-                  src="/despensa-antes.jpg"
+                  src="/img/despensa-antes.jpg"
                   alt="Despensa antes da organização"
                   className="w-full h-full object-cover"
                 />
                 <img
-                  src="/despensa-depois.jpg"
+                  src="/img/despensa-depois.jpg"
                   alt="Despensa depois da organização"
                   className="w-full h-full object-cover"
                 />
@@ -392,12 +392,12 @@ export default function PersonalOrganizerLanding() {
             <div className="bg-white rounded-lg overflow-hidden shadow-lg">
               <div className="grid grid-cols-2 h-56">
                 <img
-                  src="/escritorio-antes.jpg"
+                  src="/img/escritorio-antes.jpg"
                   alt="Escritório antes da organização"
                   className="w-full h-full object-cover"
                 />
                 <img
-                  src="/escritorio-depois.jpg"
+                  src="/img/escritorio-depois.jpg"
                   alt="Escritório depois da organização"
                   className="w-full h-full object-cover"
                 />
@@ -434,7 +434,7 @@ export default function PersonalOrganizerLanding() {
             <div className="bg-[#FDF7F2] p-6 rounded-lg shadow-lg">
               <div className="flex items-center mb-4">
                 <img
-                  src="/maria-silva.jpg"
+                  src="/img/maria-silva.jpg"
                   alt="Maria Silva"
                   className="w-16 h-16 rounded-full object-cover mr-4"
                 />
@@ -453,7 +453,7 @@ export default function PersonalOrganizerLanding() {
             <div className="bg-[#FDF7F2] p-6 rounded-lg shadow-lg">
               <div className="flex items-center mb-4">
                 <img
-                  src="/ana-costa.jpg"
+                  src="/img/ana-costa.jpg"
                   alt="Ana Costa"
                   className="w-16 h-16 rounded-full object-cover mr-4"
                 />
@@ -472,7 +472,7 @@ export default function PersonalOrganizerLanding() {
             <div className="bg-[#FDF7F2] p-6 rounded-lg shadow-lg">
               <div className="flex items-center mb-4">
                 <img
-                  src="/carla-mendes.jpg"
+                  src="/img/carla-mendes.jpg"
                   alt="Carla Mendes"
                   className="w-16 h-16 rounded-full object-cover mr-4"
                 />
