@@ -512,7 +512,7 @@ export default function PersonalOrganizerLanding() {
             <div className="bg-white rounded-lg overflow-hidden shadow-lg">
               <div className="grid grid-cols-2 h-64">
                 <img
-                  src="/despensa-antes.jpg"
+                  src="/img/despensa-antes.jpg"
                   alt="Despensa antes da organização"
                   className="w-full h-full object-cover"
                 />
