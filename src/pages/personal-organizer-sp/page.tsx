@@ -61,7 +61,7 @@ export default function PersonalOrganizerSP() {
       <section className="relative bg-[#FDF7F2] py-16 lg:py-24">
         <div className="absolute inset-0">
           <img
-            src="/raquel-martins.jpeg"
+            src="/img/raquel-martins.jpeg"
             className="w-full h-full object-cover opacity-20"
           />
           <div className="absolute inset-0 bg-[#FDF7F2]/80"></div>
@@ -91,7 +91,7 @@ export default function PersonalOrganizerSP() {
 
           <div className="text-right">
             <img
-              src="/raquel-martins.jpeg"
+              src="/img/raquel-martins.jpeg"
               className="w-full max-w-sm mx-auto rounded-lg shadow-lg"
             />
           </div>
@@ -112,7 +112,7 @@ export default function PersonalOrganizerSP() {
 
             <div className="bg-[#FDF7F2] rounded-lg shadow p-6 text-center">
               <img
-                src="/armario-personal-organizer.jpg"
+                src="/img/armario-personal-organizer.jpg"
                 className="w-full h-56 object-cover rounded-lg mb-4"
               />
               <h3 className="text-2xl font-bold text-[#37332F] mb-3">
@@ -123,7 +123,7 @@ export default function PersonalOrganizerSP() {
 
             <div className="bg-[#FDF7F2] rounded-lg shadow p-6 text-center">
               <img
-                src="/cozinha-personal-organizer.jpg"
+                src="/img/cozinha-personal-organizer.jpg"
                 className="w-full h-56 object-cover rounded-lg mb-4"
               />
               <h3 className="text-2xl font-bold mb-3 text-[#37332F]">
@@ -134,7 +134,7 @@ export default function PersonalOrganizerSP() {
 
             <div className="bg-[#FDF7F2] rounded-lg shadow p-6 text-center">
               <img
-                src="/escritorio-personal-organizer.jpg"
+                src="/img/escritorio-personal-organizer.jpg"
                 className="w-full h-56 object-cover rounded-lg mb-4"
               />
               <h3 className="text-2xl font-bold mb-3 text-[#37332F]">
@@ -162,8 +162,8 @@ export default function PersonalOrganizerSP() {
             {/* Closet */}
             <div className="bg-white rounded-lg overflow-hidden shadow-lg">
               <div className="grid grid-cols-2 h-64">
-                <img src="/antes-closet.jpg" className="object-cover h-full" />
-                <img src="/depois-closet.jpg" className="object-cover h-full" />
+                <img src="/img/antes-closet.jpg" className="object-cover h-full" />
+                <img src="/img/depois-closet.jpg" className="object-cover h-full" />
               </div>
               <div className="p-4">
                 <h4 className="font-bold">Closet</h4>
@@ -174,8 +174,8 @@ export default function PersonalOrganizerSP() {
             {/* Despensa */}
             <div className="bg-white rounded-lg overflow-hidden shadow-lg">
               <div className="grid grid-cols-2 h-64">
-                <img src="/antes-despensa.jpg" className="object-cover h-full" />
-                <img src="/depois-despensa.jpg" className="object-cover h-full" />
+                <img src="/img/antes-despensa.jpg" className="object-cover h-full" />
+                <img src="/img/depois-despensa.jpg" className="object-cover h-full" />
               </div>
               <div className="p-4">
                 <h4 className="font-bold">Despensa</h4>
@@ -186,8 +186,8 @@ export default function PersonalOrganizerSP() {
             {/* Escritório */}
             <div className="bg-white rounded-lg overflow-hidden shadow-lg">
               <div className="grid grid-cols-2 h-64">
-                <img src="/antes-escritorio.jpg" className="object-cover h-full" />
-                <img src="/depois-escritorio.jpg" className="object-cover h-full" />
+                <img src="/img/antes-escritorio.jpg" className="object-cover h-full" />
+                <img src="/img/depois-escritorio.jpg" className="object-cover h-full" />
               </div>
               <div className="p-4">
                 <h4 className="font-bold">Home Office</h4>
@@ -214,7 +214,7 @@ export default function PersonalOrganizerSP() {
             <div className="bg-[#FDF7F2] p-6 rounded-lg shadow">
               <div className="flex items-center mb-4">
                 <img
-                  src="/depo-maria.jpg"
+                  src="/img/maria-silva.jpg"
                   className="w-16 h-16 rounded-full object-cover mr-4"
                 />
                 <div>
@@ -230,7 +230,7 @@ export default function PersonalOrganizerSP() {
             <div className="bg-[#FDF7F2] p-6 rounded-lg shadow">
               <div className="flex items-center mb-4">
                 <img
-                  src="/depo-ana.jpg"
+                  src="/img/ana-costa.jpg"
                   className="w-16 h-16 rounded-full object-cover mr-4"
                 />
                 <div>
@@ -246,7 +246,7 @@ export default function PersonalOrganizerSP() {
             <div className="bg-[#FDF7F2] p-6 rounded-lg shadow">
               <div className="flex items-center mb-4">
                 <img
-                  src="/depo-carla.jpg"
+                  src="/img/carla-mendes.jpg"
                   className="w-16 h-16 rounded-full object-cover mr-4"
                 />
                 <div>
